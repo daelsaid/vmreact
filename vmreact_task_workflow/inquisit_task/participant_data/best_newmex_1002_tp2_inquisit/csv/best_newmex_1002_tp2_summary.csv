@@ -1,0 +1,2 @@
+script.startdate,script.starttime,script.subjectid,computer.platform,script.elapsedtime,values.demo_completed,values.end_survey_completed,values.trialcount,expressions.overallpercentcorrect,expressions.meanRT,expressions.stdRT,expressions.gad_7_total,expressions.phq_total,expressions.pcl_4_total,expressions.pcl_total_hybridscore_corrected,expressions.pcl_total_hybridscore_uncorrected
+070318,12:07:49,1002,mac,8787,1,1,0,0,,0,,,,,
