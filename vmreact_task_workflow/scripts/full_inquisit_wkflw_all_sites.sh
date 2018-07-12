@@ -24,10 +24,10 @@ usage
 
 #path definitions
 #path to grader script
-grader_script="/Users/lillyel-said/Desktop/inquisit/scripts/grader/"
+grader_script="/Users/lillyel-said/Desktop/vmreact_task_workflow/scripts/grader/"
 
 #main inquisit directory
-inquisit_dir='/Users/lillyel-said/Desktop/inquisit'
+inquisit_dir='/Users/lillyel-said/Desktop/vmreact_task_workflow'
 
 
 
