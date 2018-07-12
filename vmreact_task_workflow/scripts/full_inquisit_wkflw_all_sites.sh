@@ -18,8 +18,9 @@ function usage() {
 }
 
 usage
-###change with caution
 
+
+#USER VALUES TO ADJUST
 
 #path definitions
 #path to grader script
@@ -28,6 +29,9 @@ grader_script="/Users/lillyel-said/Desktop/inquisit/scripts/grader/"
 #main inquisit directory
 inquisit_dir='/Users/lillyel-said/Desktop/inquisit'
 
+
+
+###change items below with caution
 #task directory where data output lives and the task scripts are located
 data_output_path="${inquisit_dir}/inquisit_task"
 tp1_script_path="${inquisit_dir}/inquisit_task/task_script"
