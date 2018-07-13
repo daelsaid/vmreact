@@ -4,6 +4,14 @@ These directories represent the vmreact associated scripts that have been genera
 
 #vmreact_task_workflow
 
+
+Usage: full_inquisit_wkflw_all_sites.sh <subject_number> <timepoint> <site_of_administration> <initial_list>
+
+<subject_number>: numeric ID- ####
+<timepoint>: single numeric digit representing timepoint (1,2,3,4..)
+<site_of_administration>: location of administration, (either newmex or emoryu).
+<initial_list>: If tp2, enter list form as a single numeric digit (1,2,3,or 4). if timepoint 1, leave BLANK
+
 * running this script will:
 
 1. Administer the task 
