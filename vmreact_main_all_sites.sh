@@ -79,7 +79,7 @@ if [ ${timepoint} == 1 ]; then
 	/Applications/Inquisit\ 5.app/Contents/MacOS/Inquisit\ 5 ${tp1_script_path}/rey_ant_pt_hv_version_all_lists_17_08_01.iqx -s ${subj_id} -g 1 >> /dev/null 2>&1;
 else
 	unset list_types[$initial_list-1]
-    list_types=(${list_types[@]})
+    	list_types=(${list_types[@]})
 	tp2_list=${list_types[$(( RANDOM % 3))]}
 	/Applications/Inquisit\ 5.app/Contents/MacOS/Inquisit\ 5 ${tp2_script_path}/rey_ant_pt_hv_version_form${tp2_list}_17_10_11.iqx -s ${subj_id} -g 1 >> /dev/null 2>&1;
 fi
