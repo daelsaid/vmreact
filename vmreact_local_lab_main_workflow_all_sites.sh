@@ -24,7 +24,7 @@ usage
 
 #path definitions
 #path to grader script
-grader_script="/Users/lillyel-said/Desktop/vmreact/vmreact-master/vmreact_local_lab_workflow/scripts/grader/"
+grader_script="/Users/lillyel-said/Desktop/vmreact/vmreact-master/scripts/grader/"
 
 #main inquisit directory
 inquisit_dir='/Users/lillyel-said/Desktop/vmreact/vmreact_local_lab_main_workflow_all_sites.sh
