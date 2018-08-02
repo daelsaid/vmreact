@@ -1,0 +1,636 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="ChangeListManager">
+    <list default="true" id="01aa9c6e-61ea-4a64-ac6a-e746bacf7e04" name="Default Changelist" comment="all scripts added with batch mergign functions">
+      <change beforePath="$PROJECT_DIR$/README.md" beforeDir="false" afterPath="$PROJECT_DIR$/README.md" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/vmreact_main_all_sites.sh" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/vmreact_task_workflow/inquisit_task/all_data/demographics_survey_survey_1002_2018-07-03-19-07-49-129.iqdat" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/vmreact_task_workflow/inquisit_task/all_data/rey_ant_pt_hv_version_form4_17_10_11_raw_1002_2018-07-03-19-07-49-129.iqdat" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/vmreact_task_workflow/inquisit_task/all_data/rey_ant_pt_hv_version_form4_17_10_11_summary_1002_2018-07-03-19-07-49-129.iqdat" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/vmreact_task_workflow/inquisit_task/all_data/rey_ant_survey_survey_1002_2018-07-03-19-07-49-129.iqdat" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/vmreact_task_workflow/inquisit_task/participant_data/best_newmex_1002_tp2_inquisit/csv/best_newmex_1002_tp2_demographics_survey.csv" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/vmreact_task_workflow/inquisit_task/participant_data/best_newmex_1002_tp2_inquisit/csv/best_newmex_1002_tp2_demographics_survey.iqdat" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/vmreact_task_workflow/inquisit_task/participant_data/best_newmex_1002_tp2_inquisit/csv/best_newmex_1002_tp2_raw.csv" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/vmreact_task_workflow/inquisit_task/participant_data/best_newmex_1002_tp2_inquisit/csv/best_newmex_1002_tp2_raw.iqdat" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/vmreact_task_workflow/inquisit_task/participant_data/best_newmex_1002_tp2_inquisit/csv/best_newmex_1002_tp2_rey_ant_survey.csv" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/vmreact_task_workflow/inquisit_task/participant_data/best_newmex_1002_tp2_inquisit/csv/best_newmex_1002_tp2_rey_ant_survey.iqdat" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/vmreact_task_workflow/inquisit_task/participant_data/best_newmex_1002_tp2_inquisit/csv/best_newmex_1002_tp2_summary.csv" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/vmreact_task_workflow/inquisit_task/participant_data/best_newmex_1002_tp2_inquisit/csv/best_newmex_1002_tp2_summary.iqdat" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/vmreact_task_workflow/inquisit_task/participant_data/best_newmex_1002_tp2_inquisit/out/composite_scores_vakil_2018_07_03.csv" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/vmreact_task_workflow/inquisit_task/participant_data/best_newmex_1002_tp2_inquisit/out/frequency_counts_2018_07_03.csv" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/vmreact_task_workflow/inquisit_task/participant_data/best_newmex_1002_tp2_inquisit/out/log.txt" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/vmreact_task_workflow/inquisit_task/participant_data/best_newmex_1002_tp2_inquisit/out/parsed_raw_data_2018_07_03.csv" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/vmreact_task_workflow/inquisit_task/participant_data/best_newmex_1002_tp2_inquisit/out/parsed_raw_data_primacy_2018_07_03.csv" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/vmreact_task_workflow/inquisit_task/participant_data/best_newmex_1002_tp2_inquisit/out/parsed_raw_data_recency_2018_07_03.csv" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/vmreact_task_workflow/inquisit_task/participant_data/best_newmex_1002_tp2_inquisit/out/scored_data_2018_07_03.csv" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/vmreact_task_workflow/inquisit_task/participant_data/best_newmex_1002_tp2_inquisit/out/scored_data_primacy_2018_07_03.csv" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/vmreact_task_workflow/inquisit_task/participant_data/best_newmex_1002_tp2_inquisit/out/scored_data_recency_2018_07_03.csv" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/vmreact_task_workflow/inquisit_task/participant_data/best_newmex_1002_tp2_inquisit/out/sr_responses_2018_07_03.csv" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/vmreact_task_workflow/inquisit_task/participant_data/best_newmex_1002_tp2_inquisit/out/subj_age_agerange_gender_2018_07_03.csv" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/vmreact_task_workflow/inquisit_task/participant_data/best_newmex_1002_tp2_inquisit/out/subj_age_agerange_gender_new_age_bins_2018_07_03.csv" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/vmreact_task_workflow/inquisit_task/participant_data/best_newmex_1002_tp2_inquisit/out/summary_ant_scores_2018_07_03.csv" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/vmreact_task_workflow/inquisit_task/participant_data/best_newmex_1002_tp2_inquisit/out/word_correlations_2018_07_03.csv" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/vmreact_task_workflow/inquisit_task/participant_data/best_newmex_1002_tp2_inquisit/out/word_correlations_primacy_2018_07_03.csv" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/vmreact_task_workflow/inquisit_task/participant_data/best_newmex_1002_tp2_inquisit/out/word_correlations_recency_2018_07_03.csv" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/vmreact_task_workflow/inquisit_task/participant_data/best_newmex_1002_tp2_inquisit/raw/demographics_survey_survey_1002_2018-07-03-19-07-49-129.iqdat" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/vmreact_task_workflow/inquisit_task/participant_data/best_newmex_1002_tp2_inquisit/raw/rey_ant_pt_hv_version_form4_17_10_11_raw_1002_2018-07-03-19-07-49-129.iqdat" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/vmreact_task_workflow/inquisit_task/participant_data/best_newmex_1002_tp2_inquisit/raw/rey_ant_pt_hv_version_form4_17_10_11_summary_1002_2018-07-03-19-07-49-129.iqdat" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/vmreact_task_workflow/inquisit_task/participant_data/best_newmex_1002_tp2_inquisit/raw/rey_ant_survey_survey_1002_2018-07-03-19-07-49-129.iqdat" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/vmreact_task_workflow/inquisit_task/task_script/emptyarrow.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/vmreact_task_workflow/inquisit_task/task_script/examples.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/vmreact_task_workflow/inquisit_task/task_script/leftarrow.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/vmreact_task_workflow/inquisit_task/task_script/leftcongruent.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/vmreact_task_workflow/inquisit_task/task_script/leftincongruent.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/vmreact_task_workflow/inquisit_task/task_script/rectanglesetup.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/vmreact_task_workflow/inquisit_task/task_script/rectanglesetup_cue.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/vmreact_task_workflow/inquisit_task/task_script/rectanglesetup_doublecue.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/vmreact_task_workflow/inquisit_task/task_script/rey_ant_pt_hv_version_all_lists_17_08_01.iqx" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/vmreact_task_workflow/inquisit_task/task_script/rightarrow.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/vmreact_task_workflow/inquisit_task/task_script/rightcongruent.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/vmreact_task_workflow/inquisit_task/task_script/rightincongruent.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/vmreact_task_workflow/inquisit_task/task_script_by_form/emptyarrow.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/vmreact_task_workflow/inquisit_task/task_script_by_form/examples.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/vmreact_task_workflow/inquisit_task/task_script_by_form/leftarrow.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/vmreact_task_workflow/inquisit_task/task_script_by_form/leftcongruent.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/vmreact_task_workflow/inquisit_task/task_script_by_form/leftincongruent.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/vmreact_task_workflow/inquisit_task/task_script_by_form/rectanglesetup.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/vmreact_task_workflow/inquisit_task/task_script_by_form/rectanglesetup_cue.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/vmreact_task_workflow/inquisit_task/task_script_by_form/rectanglesetup_doublecue.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/vmreact_task_workflow/inquisit_task/task_script_by_form/rey_ant_pt_hv_version_form1_17_10_11.iqx" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/vmreact_task_workflow/inquisit_task/task_script_by_form/rey_ant_pt_hv_version_form2_17_10_11.iqx" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/vmreact_task_workflow/inquisit_task/task_script_by_form/rey_ant_pt_hv_version_form3_17_10_11.iqx" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/vmreact_task_workflow/inquisit_task/task_script_by_form/rey_ant_pt_hv_version_form4_17_10_11.iqx" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/vmreact_task_workflow/inquisit_task/task_script_by_form/rightarrow.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/vmreact_task_workflow/inquisit_task/task_script_by_form/rightcongruent.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/vmreact_task_workflow/inquisit_task/task_script_by_form/rightincongruent.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/vmreact_task_workflow/scripts/full_inquisit_wkflw_all_sites.sh" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/vmreact_task_workflow/scripts/grader/complete_inquisit_output.py" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/vmreact_task_workflow/scripts/grader/composite_scores.py" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/vmreact_task_workflow/scripts/grader/gen_composite.sh" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/vmreact_task_workflow/scripts/grader/inquisit_demo_summary.py" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/vmreact_task_workflow/scripts/grader/inquisit_demo_summary_newageranges.py" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/vmreact_task_workflow/scripts/grader/inquisit_grader.py" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/vmreact_task_workflow/scripts/grader/run_composite_scoring.py" beforeDir="false" />
+    </list>
+    <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
+    <option name="SHOW_DIALOG" value="false" />
+    <option name="HIGHLIGHT_CONFLICTS" value="true" />
+    <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
+    <option name="LAST_RESOLUTION" value="IGNORE" />
+  </component>
+  <component name="FUSProjectUsageTrigger">
+    <session id="1900362719">
+      <usages-collector id="statistics.lifecycle.project">
+        <counts>
+          <entry key="project.open.time.23" value="1" />
+          <entry key="project.opened" value="1" />
+        </counts>
+      </usages-collector>
+      <usages-collector id="statistics.file.extensions.open">
+        <counts>
+          <entry key="iml" value="1" />
+          <entry key="ipynb" value="2" />
+          <entry key="iqdat" value="3" />
+          <entry key="md" value="6" />
+          <entry key="py" value="23" />
+          <entry key="sh" value="9" />
+          <entry key="txt" value="4" />
+          <entry key="xml" value="3" />
+        </counts>
+      </usages-collector>
+      <usages-collector id="statistics.file.types.open">
+        <counts>
+          <entry key="Bash" value="9" />
+          <entry key="IDEA_MODULE" value="1" />
+          <entry key="IPNB" value="2" />
+          <entry key="Markdown" value="6" />
+          <entry key="PLAIN_TEXT" value="7" />
+          <entry key="Python" value="22" />
+          <entry key="Scratch" value="1" />
+          <entry key="XML" value="3" />
+        </counts>
+      </usages-collector>
+      <usages-collector id="statistics.file.extensions.edit">
+        <counts>
+          <entry key="Python Console" value="14" />
+          <entry key="md" value="998" />
+          <entry key="py" value="439" />
+          <entry key="sh" value="120" />
+          <entry key="txt" value="64" />
+        </counts>
+      </usages-collector>
+      <usages-collector id="statistics.file.types.edit">
+        <counts>
+          <entry key="Bash" value="120" />
+          <entry key="Markdown" value="998" />
+          <entry key="PLAIN_TEXT" value="64" />
+          <entry key="Python" value="453" />
+        </counts>
+      </usages-collector>
+      <usages-collector id="statistics.vcs.git.usages">
+        <counts>
+          <entry key="git.branch.merge" value="1" />
+        </counts>
+      </usages-collector>
+    </session>
+  </component>
+  <component name="FileEditorManager">
+    <leaf>
+      <file pinned="false" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/vmreact_local_lab_main_workflow_all_sites.sh">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="90">
+              <caret line="6" column="33" selection-start-line="6" selection-start-column="33" selection-end-line="6" selection-end-column="33" />
+            </state>
+          </provider>
+        </entry>
+      </file>
+    </leaf>
+  </component>
+  <component name="FileTemplateManagerImpl">
+    <option name="RECENT_TEMPLATES">
+      <list>
+        <option value="Setup Script" />
+        <option value="Python Script" />
+      </list>
+    </option>
+  </component>
+  <component name="Git.Settings">
+    <option name="PREVIOUS_COMMIT_AUTHORS">
+      <list>
+        <option value="Dawlat El-Said &lt;daelsaid@stanford.edu&gt;" />
+      </list>
+    </option>
+    <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
+    <option name="PUSH_TAGS">
+      <GitPushTagMode />
+    </option>
+    <option name="SIGN_OFF_COMMIT" value="true" />
+  </component>
+  <component name="IdeDocumentHistory">
+    <option name="CHANGED_PATHS">
+      <list>
+        <option value="$PROJECT_DIR$/ant_vmreact_binder-master/vmreact_latencies.ipynb" />
+        <option value="$PROJECT_DIR$/requirements.txt" />
+        <option value="$PROJECT_DIR$/vmreact-master/vmreact_task_workflow/scripts/grader/inquisit_grader.py" />
+        <option value="$PROJECT_DIR$/vmreact-master/vmreact_task_workflow/scripts/grader/gen_composite.sh" />
+        <option value="$PROJECT_DIR$/vmreact-merges/2vmreact_compilation.py" />
+        <option value="$PROJECT_DIR$/vmreact-master/vmreact_task_workflow/scripts/grader/complete_inquisit_output.py" />
+        <option value="$PROJECT_DIR$/vmreact-merges/vmreact_compilation.py" />
+        <option value="$PROJECT_DIR$/vmreact-master/vmreact_main_all_sites.sh" />
+        <option value="$PROJECT_DIR$/README.md" />
+        <option value="$PROJECT_DIR$/vmreact_main_all_sites.sh" />
+        <option value="$PROJECT_DIR$/vmreact-master/README.md" />
+        <option value="$PROJECT_DIR$/vmreact_local_lab_main_workflow_all_sites.sh" />
+      </list>
+    </option>
+  </component>
+  <component name="ProjectFrameBounds">
+    <option name="x" value="41" />
+    <option name="y" value="959" />
+    <option name="width" value="2048" />
+    <option name="height" value="1214" />
+  </component>
+  <component name="ProjectLevelVcsManager" settingsEditedManually="true" />
+  <component name="ProjectView">
+    <navigator proportions="" version="1">
+      <foldersAlwaysOnTop value="true" />
+    </navigator>
+    <panes>
+      <pane id="Scope">
+        <subPane subId="Scope 'Project Files'; set:Project Files; class com.intellij.psi.search.scope.ProjectFilesScope">
+          <expand>
+            <path>
+              <item name="vmreact" type="3d21c010:ScopeViewTreeModel$ProjectNode" />
+              <item name="" type="442cc68d:ScopeViewTreeModel$RootNode" />
+            </path>
+            <path>
+              <item name="vmreact" type="3d21c010:ScopeViewTreeModel$ProjectNode" />
+              <item name="" type="442cc68d:ScopeViewTreeModel$RootNode" />
+              <item name=".idea" type="9f88c78c:ScopeViewTreeModel$FileNode" />
+            </path>
+            <path>
+              <item name="vmreact" type="3d21c010:ScopeViewTreeModel$ProjectNode" />
+              <item name="" type="442cc68d:ScopeViewTreeModel$RootNode" />
+              <item name="vmreact-master" type="9f88c78c:ScopeViewTreeModel$FileNode" />
+            </path>
+            <path>
+              <item name="vmreact" type="3d21c010:ScopeViewTreeModel$ProjectNode" />
+              <item name="" type="442cc68d:ScopeViewTreeModel$RootNode" />
+              <item name="vmreact-master" type="9f88c78c:ScopeViewTreeModel$FileNode" />
+              <item name="vmreact_local_lab_workflow" type="9f88c78c:ScopeViewTreeModel$FileNode" />
+            </path>
+            <path>
+              <item name="vmreact" type="3d21c010:ScopeViewTreeModel$ProjectNode" />
+              <item name="" type="442cc68d:ScopeViewTreeModel$RootNode" />
+              <item name="vmreact-mturk" type="9f88c78c:ScopeViewTreeModel$FileNode" />
+            </path>
+          </expand>
+          <select />
+        </subPane>
+      </pane>
+      <pane id="ProjectPane">
+        <subPane>
+          <expand>
+            <path>
+              <item name="vmreact" type="b2602c69:ProjectViewProjectNode" />
+              <item name="vmreact" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="vmreact" type="b2602c69:ProjectViewProjectNode" />
+              <item name="vmreact" type="462c0819:PsiDirectoryNode" />
+              <item name="vmreact-master" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="vmreact" type="b2602c69:ProjectViewProjectNode" />
+              <item name="vmreact" type="462c0819:PsiDirectoryNode" />
+              <item name="vmreact-master" type="462c0819:PsiDirectoryNode" />
+              <item name="scripts" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="vmreact" type="b2602c69:ProjectViewProjectNode" />
+              <item name="vmreact" type="462c0819:PsiDirectoryNode" />
+              <item name="vmreact-mturk" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="vmreact" type="b2602c69:ProjectViewProjectNode" />
+              <item name="vmreact" type="462c0819:PsiDirectoryNode" />
+              <item name="vmreact_local_lab_workflow" type="462c0819:PsiDirectoryNode" />
+            </path>
+          </expand>
+          <select />
+        </subPane>
+      </pane>
+    </panes>
+  </component>
+  <component name="PropertiesComponent">
+    <property name="run.code.analysis.last.selected.profile" value="pProject Default" />
+    <property name="settings.editor.selected.configurable" value="preferences.lookFeel" />
+  </component>
+  <component name="RecentsManager">
+    <key name="MoveFile.RECENT_KEYS">
+      <recent name="$PROJECT_DIR$/" />
+      <recent name="$PROJECT_DIR$/vmreact-master" />
+      <recent name="$PROJECT_DIR$/../../inquisit" />
+      <recent name="$PROJECT_DIR$" />
+      <recent name="$PROJECT_DIR$/vmreact-master/vmreact_task_workflow" />
+    </key>
+  </component>
+  <component name="RunDashboard">
+    <option name="ruleStates">
+      <list>
+        <RuleState>
+          <option name="name" value="ConfigurationTypeDashboardGroupingRule" />
+        </RuleState>
+        <RuleState>
+          <option name="name" value="StatusDashboardGroupingRule" />
+        </RuleState>
+      </list>
+    </option>
+  </component>
+  <component name="RunManager" selected="Python.complete_inquisit_output">
+    <configuration name="complete_inquisit_output" type="PythonConfigurationType" factoryName="Python" temporary="true">
+      <module name="vmreact" />
+      <option name="INTERPRETER_OPTIONS" value="" />
+      <option name="PARENT_ENVS" value="true" />
+      <envs>
+        <env name="PYTHONUNBUFFERED" value="1" />
+      </envs>
+      <option name="SDK_HOME" value="" />
+      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$/vmreact-master/vmreact_task_workflow/scripts/grader" />
+      <option name="IS_MODULE_SDK" value="true" />
+      <option name="ADD_CONTENT_ROOTS" value="true" />
+      <option name="ADD_SOURCE_ROOTS" value="true" />
+      <option name="SCRIPT_NAME" value="$PROJECT_DIR$/vmreact-master/vmreact_task_workflow/scripts/grader/complete_inquisit_output.py" />
+      <option name="PARAMETERS" value="" />
+      <option name="SHOW_COMMAND_LINE" value="false" />
+      <option name="EMULATE_TERMINAL" value="false" />
+      <option name="MODULE_MODE" value="false" />
+      <option name="REDIRECT_INPUT" value="false" />
+      <option name="INPUT_FILE" value="" />
+      <method v="2" />
+    </configuration>
+    <configuration name="vmreact_compilation" type="PythonConfigurationType" factoryName="Python" temporary="true">
+      <module name="vmreact" />
+      <option name="INTERPRETER_OPTIONS" value="" />
+      <option name="PARENT_ENVS" value="true" />
+      <envs>
+        <env name="PYTHONUNBUFFERED" value="1" />
+      </envs>
+      <option name="SDK_HOME" value="" />
+      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$/vmreact-merges" />
+      <option name="IS_MODULE_SDK" value="true" />
+      <option name="ADD_CONTENT_ROOTS" value="true" />
+      <option name="ADD_SOURCE_ROOTS" value="true" />
+      <option name="SCRIPT_NAME" value="$PROJECT_DIR$/vmreact-merges/vmreact_compilation.py" />
+      <option name="PARAMETERS" value="" />
+      <option name="SHOW_COMMAND_LINE" value="false" />
+      <option name="EMULATE_TERMINAL" value="false" />
+      <option name="MODULE_MODE" value="false" />
+      <option name="REDIRECT_INPUT" value="false" />
+      <option name="INPUT_FILE" value="" />
+      <method v="2" />
+    </configuration>
+    <list>
+      <item itemvalue="Python.vmreact_compilation" />
+      <item itemvalue="Python.complete_inquisit_output" />
+    </list>
+    <recent_temporary>
+      <list>
+        <item itemvalue="Python.complete_inquisit_output" />
+        <item itemvalue="Python.vmreact_compilation" />
+      </list>
+    </recent_temporary>
+  </component>
+  <component name="SvnConfiguration">
+    <configuration />
+  </component>
+  <component name="TaskManager">
+    <task active="true" id="Default" summary="Default task">
+      <changelist id="01aa9c6e-61ea-4a64-ac6a-e746bacf7e04" name="Default Changelist" comment="" />
+      <created>1533228094494</created>
+      <option name="number" value="Default" />
+      <option name="presentableId" value="Default" />
+      <updated>1533228094494</updated>
+    </task>
+    <task id="LOCAL-00001" summary="all scripts added with batch mergign functions">
+      <created>1533247979877</created>
+      <option name="number" value="00001" />
+      <option name="presentableId" value="LOCAL-00001" />
+      <option name="project" value="LOCAL" />
+      <updated>1533247979877</updated>
+    </task>
+    <option name="localTasksCounter" value="2" />
+    <servers />
+  </component>
+  <component name="TodoView" selected-index="1">
+    <todo-panel id="selected-file">
+      <is-autoscroll-to-source value="true" />
+    </todo-panel>
+    <todo-panel id="all">
+      <are-packages-shown value="true" />
+      <is-autoscroll-to-source value="true" />
+    </todo-panel>
+  </component>
+  <component name="ToolWindowManager">
+    <frame x="41" y="959" width="2048" height="1214" extended-state="0" />
+    <layout>
+      <window_info id="Favorites" side_tool="true" />
+      <window_info content_ui="combo" id="Project" order="0" sideWeight="0.49899396" visible="true" weight="0.20787637" />
+      <window_info id="Structure" order="1" sideWeight="0.501006" side_tool="true" weight="0.20787637" />
+      <window_info active="true" anchor="bottom" id="Version Control" sideWeight="0.4985045" visible="true" weight="0.32976827" />
+      <window_info anchor="bottom" id="Inspection Results" sideWeight="0.832004" weight="0.32976827" />
+      <window_info anchor="bottom" id="Python Console" sideWeight="0.4985045" weight="0.29411766" />
+      <window_info anchor="bottom" id="Terminal" sideWeight="0.4985045" weight="0.33065954" />
+      <window_info anchor="bottom" id="Event Log" sideWeight="0.50149554" side_tool="true" visible="true" weight="0.32976827" />
+      <window_info anchor="bottom" id="Message" order="0" />
+      <window_info anchor="bottom" id="Find" order="1" sideWeight="0.4995015" weight="0.32976827" />
+      <window_info anchor="bottom" id="Run" order="2" />
+      <window_info anchor="bottom" id="Debug" order="3" sideWeight="0.498006" weight="0.399287" />
+      <window_info anchor="bottom" id="Cvs" order="4" weight="0.25" />
+      <window_info anchor="bottom" id="Inspection" order="5" weight="0.4" />
+      <window_info anchor="bottom" id="TODO" order="6" sideWeight="0.4985045" weight="0.11408199" />
+      <window_info anchor="right" id="R Packages" />
+      <window_info anchor="right" id="R Graphics" />
+      <window_info anchor="right" id="Commander" internal_type="SLIDING" order="0" type="SLIDING" weight="0.4" />
+      <window_info anchor="right" id="Ant Build" order="1" weight="0.25" />
+      <window_info anchor="right" content_ui="combo" id="Hierarchy" order="2" weight="0.25" />
+    </layout>
+  </component>
+  <component name="VcsContentAnnotationSettings">
+    <option name="myLimit" value="2678400000" />
+  </component>
+  <component name="VcsManagerConfiguration">
+    <MESSAGE value="all scripts added with batch mergign functions" />
+    <option name="LAST_COMMIT_MESSAGE" value="all scripts added with batch mergign functions" />
+    <option name="REFORMAT_BEFORE_PROJECT_COMMIT" value="true" />
+  </component>
+  <component name="debuggerHistoryManager">
+    <expressions id="evaluateCodeFragment">
+      <expression>
+        <expression-string>import os
+import csv
+import collections
+from difflib import SequenceMatcher
+from math import ceil</expression-string>
+        <language-id>Python</language-id>
+        <evaluation-mode>CODE_FRAGMENT</evaluation-mode>
+      </expression>
+    </expressions>
+  </component>
+  <component name="editorHistoryManager">
+    <entry file="file://$PROJECT_DIR$/vmreact_local_lab_main_workflow_all_sites.sh">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="150">
+          <caret line="10" column="36" selection-start-line="10" selection-start-column="36" selection-end-line="10" selection-end-column="36" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/vmreact-mturk/post_scoring_compiled_csv/vmreact_typing_latency_by_subject.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="150">
+          <caret line="10" column="7" selection-start-line="10" selection-start-column="7" selection-end-line="10" selection-end-column="7" />
+          <folding>
+            <element signature="e#0#19#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/ant_vmreact_binder-master/vmreact_latencies.ipynb">
+      <provider selected="true" editor-type-id="ipnb-editor">
+        <state>
+          <selected id="0" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/.idea/misc.xml">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="90">
+          <caret line="6" column="9" selection-start-line="6" selection-start-column="9" selection-end-line="6" selection-end-column="9" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/.idea/modules.xml">
+      <provider selected="true" editor-type-id="text-editor" />
+    </entry>
+    <entry file="file://$PROJECT_DIR$/.idea/vmreact.iml">
+      <provider selected="true" editor-type-id="text-editor" />
+    </entry>
+    <entry file="file://$PROJECT_DIR$/.idea/workspace.xml">
+      <provider selected="true" editor-type-id="text-editor" />
+    </entry>
+    <entry file="file://$PROJECT_DIR$/vmreact-merges/2vmreact_compilation.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="359">
+          <caret line="75" column="82" lean-forward="true" selection-start-line="75" selection-start-column="82" selection-end-line="75" selection-end-column="82" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$APPLICATION_CONFIG_DIR$/scratches/scratch.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state>
+          <caret column="4" selection-start-column="4" selection-end-column="4" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/venv/lib/python2.7/site-packages/pandas/compat/__init__.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="217">
+          <caret line="421" column="31" lean-forward="true" selection-start-line="421" selection-end-line="421" selection-end-column="71" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/ant_vmreact_binder-master/requirements.txt">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="15">
+          <caret line="1" column="6" selection-start-line="1" selection-start-column="6" selection-end-line="1" selection-end-column="6" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/vmreact-merges/vmreact_compilation.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="189">
+          <caret line="556" lean-forward="true" selection-start-line="556" selection-end-line="556" />
+          <folding>
+            <element signature="e#27#36#0" expanded="true" />
+            <element signature="e#397#9645#0" />
+            <element signature="e#9899#16738#0" />
+            <element signature="e#16885#20344#0" />
+            <element signature="e#20482#21647#0" />
+            <marker date="1533246414000" expanded="true" signature="24039:24041" ph="..." />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/vmreact-merges/vmreact_compilation.ipynb">
+      <provider selected="true" editor-type-id="ipnb-editor">
+        <state>
+          <selected id="1" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/vmreact-merges/single_inq_subj.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="-1091">
+          <caret line="15" column="14" selection-start-line="15" selection-start-column="14" selection-end-line="15" selection-end-column="14" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/vmreact-merges/pandas/__init__.py">
+      <provider selected="true" editor-type-id="text-editor" />
+    </entry>
+    <entry file="file://$PROJECT_DIR$/../../inquisit/full_inquisit_wkflw_all_sites.sh">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="368">
+          <caret line="34" column="72" selection-start-line="34" selection-start-column="72" selection-end-line="34" selection-end-column="72" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/vmreact_local_lab_workflow/inquisit_task/all_data/rey_ant_pt_hv_version_form4_17_10_11_raw_1002_2018-07-03-19-07-49-129.iqdat">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="270">
+          <caret line="7" column="220" selection-start-line="7" selection-start-column="220" selection-end-line="7" selection-end-column="220" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/vmreact_local_lab_workflow/inquisit_task/all_data/demographics_survey_survey_1002_2018-07-03-19-07-49-129.iqdat">
+      <provider selected="true" editor-type-id="text-editor" />
+    </entry>
+    <entry file="file://$PROJECT_DIR$/vmreact_local_lab_workflow/inquisit_task/all_data/rey_ant_survey_survey_1002_2018-07-03-19-07-49-129.iqdat">
+      <provider selected="true" editor-type-id="text-editor" />
+    </entry>
+    <entry file="file://$PROJECT_DIR$/vmreact-master/scripts/__init__.py">
+      <provider selected="true" editor-type-id="text-editor" />
+    </entry>
+    <entry file="file://$PROJECT_DIR$/vmreact-master/scripts/grader/inquisit_demo_summary_newageranges.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="135">
+          <caret line="11" column="36" lean-forward="true" selection-start-line="11" selection-start-column="36" selection-end-line="11" selection-end-column="36" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/vmreact-master/scripts/grader/complete_inquisit_output.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="374">
+          <caret line="35" lean-forward="true" selection-start-line="35" selection-end-line="35" />
+          <folding>
+            <element signature="e#0#9#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/vmreact-master/scripts/grader/run_composite_scoring.py">
+      <provider selected="true" editor-type-id="text-editor" />
+    </entry>
+    <entry file="file://$PROJECT_DIR$/vmreact-master/scripts/grader/inquisit_demo_summary.py">
+      <provider selected="true" editor-type-id="text-editor" />
+    </entry>
+    <entry file="file://$PROJECT_DIR$/vmreact-master/scripts/grader/composite_scores.py">
+      <provider selected="true" editor-type-id="text-editor" />
+    </entry>
+    <entry file="file://$PROJECT_DIR$/vmreact-master/scripts/grader/inquisit_grader.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="659">
+          <caret line="210" selection-start-line="210" selection-end-line="210" />
+          <folding>
+            <element signature="e#0#10#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/vmreact-master/scripts/grader/gen_composite.sh">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="15">
+          <caret line="1" column="2" selection-start-line="1" selection-start-column="2" selection-end-line="1" selection-end-column="2" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/vmreact_local_lab_workflow/__init__.py">
+      <provider selected="true" editor-type-id="text-editor" />
+    </entry>
+    <entry file="file://$PROJECT_DIR$/vmreact-master/scripts/grader/__init__.py">
+      <provider selected="true" editor-type-id="text-editor" />
+    </entry>
+    <entry file="file://$PROJECT_DIR$/README.md">
+      <provider selected="true" editor-type-id="split-provider[text-editor;markdown-preview-editor]">
+        <state split_layout="SPLIT">
+          <first_editor>
+            <caret column="20" lean-forward="true" selection-start-column="20" selection-end-column="20" />
+          </first_editor>
+          <second_editor />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/requirements.txt">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="30">
+          <caret line="2" column="15" selection-start-line="2" selection-start-column="15" selection-end-line="2" selection-end-column="15" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/README.md">
+      <provider selected="true" editor-type-id="split-provider[text-editor;markdown-preview-editor]">
+        <state split_layout="SPLIT">
+          <first_editor relative-caret-position="480">
+            <caret line="30" column="108" lean-forward="true" selection-start-line="30" selection-start-column="108" selection-end-line="30" selection-end-column="108" />
+          </first_editor>
+          <second_editor />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/setup.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="15">
+          <caret line="1" selection-start-line="1" selection-end-line="1" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/vmreact_local_lab_main_workflow_all_sites.sh">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="90">
+          <caret line="6" column="33" selection-start-line="6" selection-start-column="33" selection-end-line="6" selection-end-column="33" />
+        </state>
+      </provider>
+    </entry>
+  </component>
+</project>
