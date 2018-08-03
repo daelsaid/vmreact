@@ -26,7 +26,7 @@ function usage() {
 grader_script="/Users/lillyel-said/Desktop/vmreact/vmreact-master/scripts/grader/"
 
 #main inquisit directory
-inquisit_dir='/Users/lillyel-said/Desktop/vmreact'
+inquisit_dir='/Users/lillyel-said/Desktop/vmreact/vmreact_local_lab_workflow'
 
 #task directory where data output lives and the task scripts are located
 data_output_path="${inquisit_dir}/inquisit_task"
