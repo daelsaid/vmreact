@@ -17,7 +17,7 @@ function usage() {
     exit 1
 }
 
-usage
+#usage
 
 
 #USER VALUES TO ADJUST
