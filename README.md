@@ -7,20 +7,6 @@ These directories represent the vmreact associated scripts that have been genera
 
 Relative paths for each directory within "vmreact" are listed below:
 
-ANT data extraction scripts with summary info: ./ant_vmreact_binder-master
-MASTER: ./vmreact-master
-    * webscripts per site: ./vmreact-master/vmreact_web_script_all_lists
-    * Local lab version workflow: ./vmreact_local_lab_main_workflow_all_sites.sh 
-        ** inquisit task
-            * participant data (cleaned up and organized data exists here)
-            * task_script (main timepoint 1 script)
-            * task script by form (each task broken up by list form- for additional timepoints)
-            * all data: raw data moved from main output location here in it's .iqdat format 
-        ** scripts: grader script lives here
-            * grader
-                * complete_inquisit_output.py: master grading script
-        
-
 
 #VMREACT WORKFLOW
 
