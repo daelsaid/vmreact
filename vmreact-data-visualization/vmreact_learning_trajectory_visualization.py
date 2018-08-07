@@ -23,11 +23,9 @@ test_df=patient_scored.loc[:,'subj_id':'trial7'].dropna()
 pt_all_trials=pandas.DataFrame(data=patient_scored.set_index('subj_id').loc[:,'trial1':'trial7']).dropna().astype(int)
 pt_learning_trials=pandas.DataFrame(data=patient_scored.set_index('subj_id').loc[:,'trial1':'trial5']).dropna().astype(int)
 
-
-
 #tp1 tp2 composite scores
-comp=['total_learning',	'corrected_total_learning','learning_rate','proactive_interference','retroactive_interference','forgetting_and_retention']
-comp_2=['total_learning_2',	'corrected_total_learning_2','learning_rate_2','proactive_interference_2','retroactive_interference_2','forgetting_and_retention_2']
+comp=['total_learning','corrected_total_learning','learning_rate','proactive_interference','retroactive_interference','forgetting_and_retention']
+comp_2=['total_learning_2','corrected_total_learning_2','learning_rate_2','proactive_interference_2','retroactive_interference_2','forgetting_and_retention_2']
 
 #tp1 tp2 scored data 
 y=['trial1', 'trial2', 'trial3', 'trial4', 'trial5', 'listb', 'trial6', 'trial7','total_learning', 'corrected_total_learning','learning_rate','proactive_interference','retroactive_interference','forgetting_and_retention']
@@ -71,8 +69,6 @@ with PdfPages('/Users/lillyel-said/Desktop/patient_specific_learning_trajectorie
     plt.cla()
     plt.clf()
     plt.close()
-
-
 
     for ix, value in test_df.groupby('subj_id'):
         axes2= plt.subplot(121)
