@@ -2,7 +2,7 @@
 <project version="4">
   <component name="ProjectModuleManager">
     <modules>
-      <module fileurl="file://$PROJECT_DIR$/.idea/vmreact.iml" filepath="$PROJECT_DIR$/.idea/vmreact.iml" />
+      <module fileurl="file://$PROJECT_DIR$/.idea/vmreact_conda.iml" filepath="$PROJECT_DIR$/.idea/vmreact_conda.iml" />
     </modules>
   </component>
 </project>
