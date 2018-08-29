@@ -3,8 +3,9 @@
 #install miniconda
 bash ${PWD}/pre-requirements/Miniconda2-latest-MacOSX-x86_64.sh;
 
-#set executables to path
-export PATH=$PATH:$PWD/.conda/envs/vmreact/bin
+
+#add conda executables to path 
+export PATH=$PATH:$PWD/pre-requirements/miniconda
 
 #verify installation
 conda info;
