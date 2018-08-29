@@ -12,7 +12,6 @@ from IPython.display import display
 
 # #Grading Script
 
-# In[102]:
 
 
 def grader(all_subj_data_csv, data_output_raw_csv, data_output_scored_csv, word_corr, p_r):
@@ -221,13 +220,12 @@ def grader(all_subj_data_csv, data_output_raw_csv, data_output_scored_csv, word_
 
 
 # #demo and age range function
-# 
+#
 
 # In[103]:
 
 
-def demo_and_summary(all_subj_data_csv, demographic_data, final_summary_csv, frequency_count, subj_age_agerange_gender,
-					 sr_responses, summary_ant_scores):
+def demo_and_summary(all_subj_data_csv, demographic_data, final_summary_csv, frequency_count, subj_age_agerange_gender,sr_responses, summary_ant_scores):
 	with open(all_subj_data_csv, 'U') as file:
 		input_csv_lines_all_subj = csv.reader(file)
 		input_csv_lines_all_subj = map(list, zip(*input_csv_lines_all_subj))
@@ -522,8 +520,6 @@ def composite_scores(input_csv, output_csv):
 #     composite_scores(scored,scored.replace('_scored_data.csv','_composite_scores.csv'))
 
 
-# In[119]:
-
 import os
 import csv
 import collections
@@ -534,43 +530,42 @@ format = "%Y_%m_%d"
 current_date = datetime.datetime.today()
 date = current_date.strftime(format)
 
-output = '/Users/lillyel-said/Desktop/data_transfer/demo'
+scored_dir = '/Users/lillyel-said/Desktop/data_transfer/demo'
 os.chdir('/Users/lillyel-said/Desktop/stanford/scripts/inquisit/final/grader_inq_to_edit')
 
 
-def
-
-
-for raw in glob(os.path.join(output, '*raw.csv')):
-	all_subj_data_csv = raw
-	path = raw.split('/')[-1]
-	path = path.split('_')[0:3]
-	id = '_'.join(path) + '_inquisit'
-	dir = os.path.join('/Users/lillyel-said/Desktop/data_transfer/', id, 'out')
-	demo_data = glob(os.path.join('/Users/lillyel-said/Desktop/data_transfer/', id, 'csv', '*demographics_survey.csv'))
-	summary_data = glob(os.path.join('/Users/lillyel-said/Desktop/data_transfer/', id, 'csv', '*summary.csv'))
-	print summary_data[0]
-	grader(all_subj_data_csv, os.path.join(dir, 'parsed_raw_data' + '_' + date + '.csv'),
-		   os.path.join(dir, 'scored_data' + '_' + date + '.csv'),
-		   os.path.join(dir, 'word_correlations' + '_' + date + '.csv'), 0)
-	grader(all_subj_data_csv, os.path.join(dir, 'parsed_raw_data_primacy' + '_' + date + '.csv'),
-		   os.path.join(dir, 'scored_data_primacy' + '_' + date + '.csv'),
-		   os.path.join(dir, 'word_correlations_primacy' + '_' + date + '.csv'), 1)
-	grader(all_subj_data_csv, os.path.join(dir, 'parsed_raw_data_recency' + '_' + date + '.csv'),
-		   os.path.join(dir, 'scored_data_recency' + '_' + date + '.csv'),
-		   os.path.join(dir, 'word_correlations_recency' + '_' + date + '.csv'), 2)
-	composite_scores(os.path.join(dir, 'scored_data' + '_' + date + '.csv'),
-					 os.path.join(dir, 'composite_scores_vakil' + '_' + date + '.csv'))
-	try:
-		demo_and_summary(all_subj_data_csv, demo_data[0], summary_data[0],
-						 os.path.join(dir, 'frequency_counts' + '_' + date + '.csv'),
-						 os.path.join(dir, 'subj_age_agerange_gender' + '_' + date + '.csv'),
-						 os.path.join(dir, 'sr_responses' + '_' + date + '.csv'),
-						 os.path.join(dir, 'summary_ant_scores' + '_' + date + '.csv'))
-		demo_and_summary_new(all_subj_data_csv, demo_data[0],
-							 os.path.join(dir, 'subj_age_agerange_gender_new_age_bins' + '_' + date + '.csv'))
-	except:
-		continue
+def restructure_and_regrade_all_data(scored_dir):
+	for raw in glob(os.path.join(output, '*raw.csv')):
+		all_subj_data_csv = raw
+		path = raw.split('/')[-1]
+		path = path.split('_')[0:3]
+		id = '_'.join(path) + '_inquisit'
+		dir = os.path.join('/Users/lillyel-said/Desktop/data_transfer/', id, 'out')
+		demo_data = glob(
+			os.path.join('/Users/lillyel-said/Desktop/data_transfer/', id, 'csv', '*demographics_survey.csv'))
+		summary_data = glob(os.path.join('/Users/lillyel-said/Desktop/data_transfer/', id, 'csv', '*summary.csv'))
+		print summary_data[0]
+		grader(all_subj_data_csv, os.path.join(dir, 'parsed_raw_data' + '_' + date + '.csv'),
+			   os.path.join(dir, 'scored_data' + '_' + date + '.csv'),
+			   os.path.join(dir, 'word_correlations' + '_' + date + '.csv'), 0)
+		grader(all_subj_data_csv, os.path.join(dir, 'parsed_raw_data_primacy' + '_' + date + '.csv'),
+			   os.path.join(dir, 'scored_data_primacy' + '_' + date + '.csv'),
+			   os.path.join(dir, 'word_correlations_primacy' + '_' + date + '.csv'), 1)
+		grader(all_subj_data_csv, os.path.join(dir, 'parsed_raw_data_recency' + '_' + date + '.csv'),
+			   os.path.join(dir, 'scored_data_recency' + '_' + date + '.csv'),
+			   os.path.join(dir, 'word_correlations_recency' + '_' + date + '.csv'), 2)
+		composite_scores(os.path.join(dir, 'scored_data' + '_' + date + '.csv'),
+						 os.path.join(dir, 'composite_scores_vakil' + '_' + date + '.csv'))
+		try:
+			demo_and_summary(all_subj_data_csv, demo_data[0], summary_data[0],
+							 os.path.join(dir, 'frequency_counts' + '_' + date + '.csv'),
+							 os.path.join(dir, 'subj_age_agerange_gender' + '_' + date + '.csv'),
+							 os.path.join(dir, 'sr_responses' + '_' + date + '.csv'),
+							 os.path.join(dir, 'summary_ant_scores' + '_' + date + '.csv'))
+			demo_and_summary_new(all_subj_data_csv, demo_data[0],
+								 os.path.join(dir, 'subj_age_agerange_gender_new_age_bins' + '_' + date + '.csv'))
+		except:
+			continue
 
 # In[86]:
 
@@ -619,13 +614,7 @@ for scored_csv in glob(os.path.join(scored_dir, '*scored*')):
 	move(os.path.join(scored_dir, 'tmp.csv'), scored_csv)
 	print scored_csv
 
-# In[ ]:
-
 # Getting composite scores from scored
-
-
-# In[ ]:
-
 
 scored_dir = '/Users/lillyel-said/Desktop/vmreact/output/'
 
@@ -678,7 +667,7 @@ def set_scored_to_df(scored_dir):
 
 
 # need to get latency values,
-# use the scored to set the subject ids. 
+# use the scored to set the subject ids.
 # append composite to scored_cols since they're in the same order and composite doesn't have subject ids
 # summary - use script.subjectid
 # demo - use subject
@@ -783,9 +772,6 @@ def batch_merge(scored_dir, latency_csv):
 		#     os.system('open /Users/cdla/Desktop/scratch/vmreact/2_vmreact/'+'mturk_batch'+batch+'_compiled.csv')
 		return batch_df
 
-
-# In[ ]:
-
 # concat all merged df csvs to 1 final compiled csv
 def conc_all_merged_df(compiled_csv):
 	dataframes_to_concat = []
@@ -804,8 +790,3 @@ def conc_all_merged_df(compiled_csv):
 	result = result.drop_duplicates()
 	result.to_csv(os.path.join(scored_dir, 'mturk_vmreact_complete_compilation.csv'), index=False)
 	return result
-
-# In[ ]:
-
-
-# In[ ]:

@@ -1,13 +1,14 @@
 # !/usr/bin/env python2
+
 # -*- coding: utf-8 -*-
 """
 Created on Tue Feb 27 12:04:33 2018
 
-@author: dawlat_local
+@author: dawlat_elsaid
 """
 
-import numpy as np
 import pandas
+import numpy as np
 
 
 def composite_scores(get_comp_scores, input_csv, output_csv):

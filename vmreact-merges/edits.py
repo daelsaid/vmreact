@@ -271,7 +271,17 @@ date = current_date.strftime(format)
 
 output_csv_location = '/Users/cdla/Desktop/scratch/vmreact/2_vmreact/'
 
-for raw in glob('/Users/cdla/Desktop/scratch/vmreact/1_rawdata/*/*raw.csv'):
+
+for raw in glob('/Users/lillyel-said/Desktop/inquisit_renamed/t1/*raw.csv'):
+# for raw in glob(os.path.join(os.path.dirname(scored_dir))):
+	print raw
+	path = raw.split('/')[-1]
+	path = path.split('_')[0:3]
+	id = '_'.join(path) + '_inquisit'
+	demo='_'.join(path) + '_demographics_survey.csv'
+	summary='_'.join(path) + '_summary.csv'
+	end='_'.join(path) + '_rey_ant_survey.csv'
+	print path,id# out_dir = scored_dir
 	raw_data = raw
 	demo_data = raw.replace('raw.csv', 'demo.csv')
 	summary_data = raw.replace('raw.csv', 'summary.csv')
@@ -287,8 +297,6 @@ for raw in glob('/Users/cdla/Desktop/scratch/vmreact/1_rawdata/*/*raw.csv'):
 		   os.path.join(output_csv_location, prefix + 'word_correlations_recency.csv'), 2)
 	copy(demo_data, os.path.join(output_csv_location, prefix + 'demo.csv'))
 	copy(summary_data, os.path.join(output_csv_location, prefix + 'summary.csv'))
-
-# In[4]:
 
 scored_dir = '/Users/cdla/Desktop/scratch/vmreact/2_vmreact/'
 for scored_csv in glob(os.path.join(scored_dir, '*parsed*')):
@@ -329,7 +337,7 @@ for batch in range(1, 9):
 			'latency' not in x and 'online' not in x and 'Unnamed' not in x and 'time_comp' not in x and 'subj_id' not in x)])
 	print batch
 	clin_raw_df = pd.read_csv(clin_raw, dtype=str)
-	clin_raw_cols.extend(
+	clin_raw_cols,.extend(
 		[x for x in clin_raw_df.columns.tolist() if 'latency' not in x and 'end' not in x and 'Unnamed' not in x])
 	sum_df = pd.read_csv(sum, dtype=str)
 	scored_df = pd.read_csv(scored, dtype=str)
@@ -342,7 +350,7 @@ print demo_cols
 print clin_raw_cols
 
 # need to get latency values,
-# use the scored to set the subject ids. 
+# use the scored to set the subject ids.
 # append composite to scored_cols since they're in the same order and composite doesn't have subject ids
 # summary - use script.subjectid
 # demo - use subject
@@ -371,63 +379,7 @@ for batch in [8]:
 	scored_df = pd.read_csv(scored)
 	comp_df = pd.read_csv(composite).rename(index=str, columns={'Unnamed: 0': 'subject'})
 	comp_df['subject'] = comp_df['subject'].apply(int)
-	vmreact_df = pd.merge(scored_df, comp_df, left_index=True, right_on='subject', how='left').drop('subject', axis=1)
-	vmreact_df['subj_id'] = vmreact_df['subj_id'].astype(str)
-	# vmreact_df['subj_id']=vmreact_df['subj_id'].apply(pd.to_numeric)
-	latency_df = pd.read_csv(latency_csv, dtype=str)
-
-	latency_df = latency_df.drop_duplicates().reset_index()
-
-	subject_ids = vmreact_df['subj_id'].tolist()
-
-	batch_demo_cols = [x for x in demo_df.columns.tolist() if x in demo_cols]
-	append_demo_cols = [x for x in demo_cols if x not in demo_df.columns.tolist()]
-	demo_df = demo_df[demo_df['subject'].astype(str).isin(subject_ids)][batch_demo_cols]
-	for col in append_demo_cols:
-		demo_df[col] = np.nan
-	# print demo_df
-	# demo_df['subject']=demo_df['subject'].apply(pd.to_numeric)
-
-	batch_clin_cols = [x for x in clin_raw_df.columns.tolist() if x in clin_raw_cols]
-	append_clin_cols = [x for x in clin_raw_cols if x not in clin_raw_df.columns.tolist()]
-	clin_raw_df = clin_raw_df[clin_raw_df['subject'].astype(str).isin(subject_ids)][batch_clin_cols]
-	for col in sorted(append_clin_cols):
-		clin_raw_df[col] = np.nan
-	# clin_raw_df['subject']=clin_raw_df['subject'].apply(pd.to_numeric)
-
-	batch_sum_cols = [x for x in sum_df.columns.tolist() if x in sum_cols]
-	append_sum_cols = [x for x in sum_cols if x not in sum_df.columns.tolist()]
-	sum_df = sum_df[sum_df['subject'].astype(str).isin(subject_ids)][batch_sum_cols]
-	for col in sorted(append_sum_cols):
-		sum_df[col] = np.nan
-	# sum_df['subject']=sum_df['subject'].apply(pd.to_numeric)
-
-	batch_df = demo_df.merge(sum_df, left_on='subject', right_on='subject').drop(
-		['script.startdate', 'script.starttime'], axis=1)
-	batch_df = batch_df.merge(clin_raw_df, left_on='subject', right_on='subject').drop(
-		['date_y', 'time_y', 'group_y', 'build_y'], axis=1)
-	batch_df = batch_df.merge(vmreact_df, left_on='subject', right_on='subj_id').drop('subj_id', axis=1)
-	batch_df = batch_df.rename(columns={'date_x': 'date', 'time_x': 'time', 'group_x': 'group', 'build_x': 'build'})
-	# print batch_df
-
-	print subject_ids
-	latency_df['subjid'] = latency_df['subjid'].astype(str)
-	latency_df['date'] = latency_df['date'].astype(int)
-	batch_df['date'] = batch_df['date'].astype(int)
-
-	latency_df = latency_df.loc[(latency_df['subjid'].isin(
-		batch_df['subject'].astype(str).tolist()))]  # & latency_df['date'].isin(batch_df['date'].tolist()))]
-
-	latency_df = latency_df.loc[(
-			latency_df['subjid'].isin(batch_df['subject'].astype(str).tolist()) & latency_df['date'].isin(
-		batch_df['date'].tolist()))]
-
-	batch_df['subject'] = batch_df['subject'].astype(str)
-	batch_df = batch_df.merge(latency_df, left_on='subject', right_on='subjid')
-
-	batch_df.to_csv(os.path.join(scored_dir, 'mturk_batch' + batch + '_compiled.csv'))
-	os.system('open /Users/cdla/Desktop/scratch/vmreact/2_vmreact/' + 'mturk_batch' + batch + '_compiled.csv')
-
+	vm
 # In[318]:
 
 dataframes_to_concat = []

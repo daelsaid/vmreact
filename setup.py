@@ -3,10 +3,12 @@ try:
 except ImportError:
 	from distutils.core import setup
 
-# pip install pandas
-# pip install matplotlib
-# pip install glob
-# pip install IPython
+import sys
+import os
+
+
+cwd=os.getcwd()
+sys.path.append(os.path.join(cwd,'vmreact_conda/.conda/envs/vmreact_conda/bin'))
 
 required = [
 	'certifi==2018.8.13',
@@ -16,6 +18,7 @@ required = [
 	'pytz==2018.5',
 	'six==1.11.0',
 	'virtualenv==16.0.0'
+
 ]
 
 long_desc = open('README.md').read() + '\n\n' + open('requirements.txt').read() + '\n\n' + open('installation.txt').read()
@@ -31,7 +34,6 @@ setup(
 	platforms='Mac OSx',
 	url='https://github.com/daelsaid/vmreact',
 	license='',
-	wiki='https://github.com/daelsaid/vmreact/wiki',
 	author='dawlat el-said',
 	author_email='daelsaid@gmail.com',
 	description='Etkin lab VMREACT package',

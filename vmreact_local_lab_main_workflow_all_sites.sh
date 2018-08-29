@@ -49,24 +49,25 @@ list_types=($(seq 1 1 4)) #enter 1 numeric value (list 1,2,3,4)
 
 
 #makes data directories
+cd ${data_output_path}/participant_data;
+
+# if [[ `echo ${site}| wc -l` -gt 0 ]]; then
+dir_id=${site}_${subj_id}_tp${timepoint}
+main_dir_id=${site}_${subj_id}_tp${timepoint}_inquisit
+full_subj_path=${data_output_path}/participant_data/${main_dir_id}
+log_file=${full_subj_path}/out/log.txt
 cd ${data_output_path}/participant_data
-if [ `echo ${site}| wc -l` -gt 0 ]; then
-	dir_id=${site}_${subj_id}_tp${timepoint}
-	main_dir_id=${site}_${subj_id}_tp${timepoint}_inquisit
-	full_subj_path=${data_output_path}/participant_data/${main_dir_id}
-	log_file=${full_subj_path}/out/log.txt
-	cd ${data_output_path}/participant_data
-	mkdir ${full_subj_path};
-	mkdir ${full_subj_path}/csv ${full_subj_path}/raw ${full_subj_path}/out;
-else 
-	dir_id=best_${subj_id}_tp${timepoint}
-	main_dir_id=best_${subj_id}_tp${timepoint}_inquisit
-	full_subj_path=${data_output_path}/participant_data/${main_dir_id}
-	log_file=${full_subj_path}/out/log.txt
-	cd ${data_output_path}/participant_data
-	mkdir ${full_subj_path};
-	mkdir ${full_subj_path}/csv ${full_subj_path}/raw ${full_subj_path}/out;
-fi
+mkdir ${full_subj_path};
+mkdir ${full_subj_path}/csv ${full_subj_path}/raw ${full_subj_path}/out;
+# else 
+# 	dir_id=best_${subj_id}_tp${timepoint}
+# 	main_dir_id=best_${subj_id}_tp${timepoint}_inquisit
+# 	full_subj_path=${data_output_path}/participant_data/${main_dir_id}
+# 	log_file=${full_subj_path}/out/log.txt
+# 	cd ${data_output_path}/participant_data
+# 	mkdir ${full_subj_path};
+# 	mkdir ${full_subj_path}/csv ${full_subj_path}/raw ${full_subj_path}/out;
+# fi
 
 
 #runs the inquisit script
