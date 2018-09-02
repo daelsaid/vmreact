@@ -113,7 +113,6 @@ with PdfPages('/Users/lillyel-said/Desktop/patient_specific_learning_trajectorie
         labels=['group 1: 0+ words remembered', 'group 2: between 0 and -5','group 3: > -5 words remembered' ]
         display = (0,1,2)
         ax2.legend([label for i,label in enumerate(labels) if i in display],fontsize=10, bbox_to_anchor=(1.57,1.00), ncol=1)
-        bbox_to_anchor=((1.60,1.00), ncol=1)
         ax2.legend
         pdf.savefig()
 

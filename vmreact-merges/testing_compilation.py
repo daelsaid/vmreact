@@ -540,7 +540,7 @@ os.chdir('/Users/lillyel-said/Desktop/stanford/scripts/inquisit/final/grader_inq
 
 
 # rename
-output_csv_location = '/Users/lillyel-said/Desktop/data_transfer''
+output_csv_location = '/Users/lillyel-said/Desktop/data_transfer'
 raw_data_csvs = '/Users/lillyel-said/Desktop/data_transfer/raw1'
 
 data_path=
