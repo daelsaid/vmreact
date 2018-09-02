@@ -27,7 +27,7 @@ grader_script="${HOME}/Desktop/vmreact/vmreact-master/scripts/grader/"
 
 
 #main inquisit directory
-# inquisit_dir="/Users/`echo $USER`/Desktop/vmreact/vmreact_local_lab_workflow"
+inquisit_dir="/Users/`echo $USER`/Desktop/vmreact/vmreact_local_lab_workflow"
 
 
 
