@@ -58,4 +58,4 @@ dependencies:
   - libgfortran=3.0.1=h93005f0_2
   - mkl=2018.0.3=1
   - numpy-base=1.15.0=py27h8a80b8c_0
-prefix: ${HOME}/Desktop/stanford/scripts/github/vmreact/pre-requirements/vmreact_miniconda2
+prefix: ${HOME}/Desktop/vmreact/pre-requirements/vmreact_miniconda2
