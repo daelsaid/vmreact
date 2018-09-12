@@ -14,8 +14,6 @@ from best_vmreact_subj_naming import best_rename_with_subj
 from best_vmreact_compilation_merged import restructure_and_regrade_all_data
 # os.chdir('/Users/lillyel-said/Desktop/stanford/scripts/projects/vmreact_conda/vmreact-master/scripts/grader')
 
-# global demo_df, clin_raw_df, scored_df, recency_df, primacy_df, age_range_df,date
-
 format = "%Y_%m_%d"
 current_date = datetime.datetime.today()
 date = current_date.strftime(format)
@@ -39,6 +37,8 @@ demographic_data = args.demo_data
 final_summary_csv = args.summary_data
 end=args.rey_ant_end_survey
 output=args.output_csv_location
+
+template_dir='${HOME}/Desktop/vmreact/ant_vmreact_binder-master/templates'
 csv_dir=output.split('/')[-2]
 main_dir=output.split('/')[-4]
 
@@ -51,24 +51,30 @@ demo_and_summary(all_subj_data_csv, args.demo_data, args.summary_data,
 demo_and_summary_new(all_subj_data_csv, args.demo_data, os.path.join(args.output_csv_location,
 																	 'subj_age_agerange_gender_new_age_bins' + '_' + date + '.csv'))
 
-grader(all_subj_data_csv, os.path.join(args.output_csv_location, 'parsed_raw_data' + '_' + date + '.csv'),
-	   os.path.join(args.output_csv_location, 'scored_data' + '_' + date + '.csv'),
-	   os.path.join(args.output_csv_location, 'word_correlations' + '_' + date + '.csv'), 0)
+grader(all_subj_data_csv, os.path.join(args.output_csv_location, 'vmreact_parsed_raw_data' + '_' + date + '.csv'),
+	   os.path.join(args.output_csv_location, 'vmreact_scored_data' + '_' + date + '.csv'),
+	   os.path.join(args.output_csv_location, 'vmreact_word_correlations' + '_' + date + '.csv'), 0)
 
 grader(all_subj_data_csv, os.path.join(args.output_csv_location, 'parsed_raw_data_primacy' + '_' + date + '.csv'),
-	   os.path.join(args.output_csv_location, 'scored_data_primacy' + '_' + date + '.csv'),
-	   os.path.join(args.output_csv_location, 'word_correlations_primacy' + '_' + date + '.csv'), 1)
+	   os.path.join(args.output_csv_location, 'vmreact_scored_data_primacy' + '_' + date + '.csv'),
+	   os.path.join(args.output_csv_location, 'vmreact_word_correlations_primacy' + '_' + date + '.csv'), 1)
 
-grader(all_subj_data_csv, os.path.join(args.output_csv_location, 'parsed_raw_data_recency' + '_' + date + '.csv'),
-	   os.path.join(args.output_csv_location, 'scored_data_recency' + '_' + date + '.csv'),
-	   os.path.join(args.output_csv_location, 'word_correlations_recency' + '_' + date + '.csv'), 2)
+grader(all_subj_data_csv, os.path.join(args.output_csv_location, 'vmreact_parsed_raw_data_recency' + '_' + date + '.csv'),
+	   os.path.join(args.output_csv_location, 'vmreact_scored_data_recency' + '_' + date + '.csv'),
+	   os.path.join(args.output_csv_location, 'vmreact_word_correlations_recency' + '_' + date + '.csv'), 2)
 
-composite_scores(1, os.path.join(args.output_csv_location, 'scored_data' + '_' + date + '.csv'),os.path.join(args.output_csv_location, 'composite_scores_vakil' + '_' + date + '.csv'))
-
+composite_scores(1, os.path.join(args.output_csv_location, 'vmreact_scored_data' + '_' + date + '.csv'),os.path.join(args.output_csv_location, 'vmreact_composite_scores_vakil' + '_' + date + '.csv'))
 
 best_rename_with_subj(args.output_csv_location)
 
 restructure_and_regrade_all_data(args.output_csv_location)
+
+gen_vmreact_latencies(csv_dir,args.output_csv_location)
+
+ant_extraction_and_latencies(csv_dir,args.output_csv_location,template_dir,args.output_csv_location)
+
+
+
 # batch_merge(args.output_csv_location,compiled_columns(os.path.join(args.output_csv_location,csv_dir,'csv')))
 
 # organize_columns_merge_csvs(args.output_csv_location,compiled_columns(os.path.join(args.output_csv_location,csv_dir,'csv')))

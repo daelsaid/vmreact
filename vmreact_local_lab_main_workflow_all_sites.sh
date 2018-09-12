@@ -22,14 +22,10 @@ function usage() {
 
 #path definitions
 #path to grader script
-
 grader_script="${HOME}/Desktop/vmreact/vmreact-master/scripts/grader/"
 
-
 #main inquisit directory
-inquisit_dir="/Users/`echo $USER`/Desktop/vmreact/vmreact_local_lab_workflow"
-
-
+inquisit_dir="${HOME}/Desktop/vmreact/vmreact_local_lab_workflow"
 
 #task directory where data output lives and the task scripts are located
 data_output_path="${inquisit_dir}/inquisit_task"
@@ -62,7 +58,7 @@ log_file=${full_subj_path}/out/log.txt
 cd ${data_output_path}/participant_data
 
 mkdir ${full_subj_path};
-mkdir ${full_subj_path}/csv ${full_subj_path}/raw ${full_subj_path}/out;
+mkdir ${full_subj_path}/csv ${full_subj_path}/raw ${full_subj_path}/out ${full_subj_path}/parsed_intermediates;
 
 
 #runs the inquisit script

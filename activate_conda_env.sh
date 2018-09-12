@@ -7,7 +7,7 @@ env_path="${project_path}/pre-requirements/vmreact_miniconda2/envs/vmreact"
 #rename vmreact-master to vmreact
 
 echo "renaming vmreact-master to vmreact"
-mv "/Users/`echo $USER`/Desktop/vmreact-master" "/Users/`echo $USER`/Desktop/vmreact";
+#mv "/Users/`echo $USER`/Desktop/vmreact-master" "/Users/`echo $USER`/Desktop/vmreact";
 
 #install miniconda in the pre-requirements dir
 echo "Installing miniconda2 in the pre-requirements folder....";
@@ -22,9 +22,10 @@ echo "verification of conda installation....."
 conda info;
 
 #update
-conda update conda;
+# conda update conda;
 
 #create vmreact env
+
 echo "creating vmreact conda environment...."
 conda env create --file `echo ${project_path}`/pre-requirements/vmreact_miniconda_env.yaml -p `echo ${project_path}`/pre-requirements/vmreact_miniconda2/envs/vmreact;
 
