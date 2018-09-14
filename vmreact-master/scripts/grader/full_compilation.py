@@ -8,7 +8,6 @@ from inquisit_grader import grader
 from composite_scores import composite_scores
 from inquisit_demo_summary import demo_and_summary
 from inquisit_demo_summary_newageranges import demo_and_summary_new
-from inquisit_grader import grader
 from best_vmreact_subj_naming import best_rename_with_subj
 from best_vmreact_compilation_merged import restructure_and_regrade_all_data
 

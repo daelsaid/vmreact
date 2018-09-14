@@ -32,6 +32,4 @@ def composite_scores(get_comp_scores, input_csv, output_csv):
 		composite_scores['proactive_interference'] = df_trials['trial1'].subtract(scored_data['listb'], axis='rows')
 		composite_scores['retroactive_interference'] = df_trials['trial5'].subtract(df_trials['trial6'], axis='rows')
 		composite_scores['forgetting_and_retention'] = df_trials['trial5'].subtract(df_trials['trial7'], axis='rows')
-		# composite_scores_transposed=composite_scores.transpose()
-		# composite_scores_transposed.to_csv(output_csv,header=True,index=['measure','score'])
 		composite_scores.to_csv(output_csv, header=True, index=['measure', 'score'])
