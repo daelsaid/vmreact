@@ -1,23 +1,11 @@
 import collections
 import csv
+from extract_csv_into_dict_fxn import extract_data_from_csv_into_dict
 
-
-def demo_and_summary(all_subj_data_csv, demographic_data, final_summary_csv, frequency_count, subj_age_agerange_gender,
-					 sr_responses, summary_ant_scores):
-	with open(all_subj_data_csv, 'U') as file:
-		input_csv_lines_all_subj = csv.reader(file)
-		input_csv_lines_all_subj = map(list, zip(*input_csv_lines_all_subj))
-		all_subj_csv_lines = dict((rows[0], rows[1:]) for rows in input_csv_lines_all_subj)
-
-	with open(demographic_data, 'U') as file:
-		input_demo_sr_q_csv = csv.reader(file)
-		input_demo_sr_q_csv = map(list, zip(*input_demo_sr_q_csv))
-		demographic_data = dict((rows[0], rows[1:]) for rows in (input_demo_sr_q_csv))
-
-	with open(final_summary_csv, 'U') as file:
-		final_summary_lines = csv.reader(file)
-		final_summary_lines = map(list, zip(*final_summary_lines))
-		rey_summary = dict((rows[0], rows[1:]) for rows in (final_summary_lines))
+def demo_and_summary(all_subj_data_csv, demographic_data, final_summary_csv, frequency_count,subj_age_agerange_gender,sr_responses, summary_ant_scores):
+	all_subj_csv_lines=extract_data_from_csv_into_dict(all_subj_data_csv)
+	demographic_data=extract_data_from_csv_into_dict(demographic_data)
+	rey_summary=extract_data_from_csv_into_dict(final_summary_csv)
 
 	age_ranges = {
 		'16-19': range(16, 20, 1),
@@ -34,8 +22,7 @@ def demo_and_summary(all_subj_data_csv, demographic_data, final_summary_csv, fre
 
 	for subject in sorted(set(all_subj_csv_lines['subject'])):
 		subj_id_only_demo.append(subject)
-		subj_id_list_combined = [demographic_data['subject'][x] for x in range(len(demographic_data['subject'])) if
-								 demographic_data['subject'][x] == subject]
+		subj_id_list_combined = [demographic_data['subject'][x] for x in range(len(demographic_data['subject'])) if demographic_data['subject'][x] == subject]
 		subj_id_list_demo.append(subj_id_list_combined)
 
 	subj_id_combined = [(idx, val) for idx, val in enumerate(sorted(subj_id_only_demo))]
@@ -80,22 +67,13 @@ def demo_and_summary(all_subj_data_csv, demographic_data, final_summary_csv, fre
 	subj_age_gender_mem = []
 	x = []
 	for idx2, subj_id in enumerate(subj_id_only_demo):
-		subj_age_gen = [[demographic_data['subject'][x], demographic_data['gender_response'][x].lower(),
-						 demographic_data['age_textbox_response'][x]] for x in range(len(demographic_data['subject']))
-						if demographic_data['subject'][x] == subj_id]
-		y = [[demographic_data['subject'][x]] for x in range(len(demographic_data['subject'])) if
-			 demographic_data['subject'][x] == subj_id]
+		subj_age_gen = [[demographic_data['subject'][x], demographic_data['gender_response'][x].lower(),demographic_data['age_textbox_response'][x]] for x in range(len(demographic_data['subject'])) if demographic_data['subject'][x] == subj_id]
+		y = [[demographic_data['subject'][x]] for x in range(len(demographic_data['subject'])) if demographic_data['subject'][x] == subj_id]
 		subj_age_gender_mem.append(subj_age_gen)
 
-	demo_subj_age_gender = [[demographic_data['subject'][x], demographic_data['gender_response'][x].lower(),
-							 demographic_data['age_textbox_response'][x]]
-							for x in range(len(demographic_data['subject']))
-							if demographic_data['subject'][x]]
+	demo_subj_age_gender = [[demographic_data['subject'][x], demographic_data['gender_response'][x].lower(),demographic_data['age_textbox_response'][x]] for x in range(len(demographic_data['subject']))if demographic_data['subject'][x]]
 
-	raw_data_responses = [[all_subj_csv_lines['subject'][x], all_subj_csv_lines['trialcode'][x],
-						   all_subj_csv_lines['response'][x].lower()]
-						  for x in range(len(all_subj_csv_lines['subject']))
-						  if 'recall_response' in all_subj_csv_lines['trialcode'][x]]
+	raw_data_responses = [[all_subj_csv_lines['subject'][x], all_subj_csv_lines['trialcode'][x],all_subj_csv_lines['response'][x].lower()] for x in range(len(all_subj_csv_lines['subject'])) if 'recall_response' in all_subj_csv_lines['trialcode'][x]]
 
 	key_val = []
 	for key in age_ranges.keys():
@@ -143,17 +121,9 @@ def demo_and_summary(all_subj_data_csv, demographic_data, final_summary_csv, fre
 		if sum_val[0] in new_summary_dict.keys():
 			new_summary_dict[sum_val[0]].append(sum_val[1])
 
-	subject_summary_sr_responses = [[rey_summary['script.subjectid'][x], rey_summary['expressions.gad_7_total'][x],
-									 rey_summary['expressions.phq_total'][x],
-									 rey_summary['expressions.pcl_4_total'][x],
-									 rey_summary['expressions.pcl_total_hybridscore_corrected'][x]] for x in
-									range(len(rey_summary['script.subjectid'])) if
-									rey_summary['values.end_survey_completed'][x] == '1']
+	subject_summary_sr_responses = [[rey_summary['script.subjectid'][x], rey_summary['expressions.gad_7_total'][x], rey_summary['expressions.phq_total'][x],rey_summary['expressions.pcl_4_total'][x], rey_summary['expressions.pcl_total_hybridscore_corrected'][x]] for x in range(len(rey_summary['script.subjectid'])) if rey_summary['values.end_survey_completed'][x] == '1']
 
-	subject_summary_ant_scores = [
-		[rey_summary['script.subjectid'][x], rey_summary['expressions.overallpercentcorrect'][x],
-		 rey_summary['expressions.meanRT'][x], rey_summary['expressions.stdRT'][x]] for x in
-		range(len(rey_summary['script.subjectid'])) if rey_summary['values.end_survey_completed'][x] == '1']
+	subject_summary_ant_scores = [[rey_summary['script.subjectid'][x], rey_summary['expressions.overallpercentcorrect'][x], rey_summary['expressions.meanRT'][x], rey_summary['expressions.stdRT'][x]] for x in range(len(rey_summary['script.subjectid'])) if rey_summary['values.end_survey_completed'][x] == '1']
 
 	with open(sr_responses, 'wb') as csvfile:
 		writer = csv.writer(csvfile, delimiter=',')
@@ -167,4 +137,4 @@ def demo_and_summary(all_subj_data_csv, demographic_data, final_summary_csv, fre
 		writer.writerow(['subj_id', 'percent_correct', 'meanRT', 'stdRT'])
 		for scores in sorted(subject_summary_ant_scores):
 			writer.writerow(scores)
-		csvfile.close()
+			csvfile.close()

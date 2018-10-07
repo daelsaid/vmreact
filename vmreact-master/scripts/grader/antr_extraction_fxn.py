@@ -4,10 +4,13 @@ import numpy as np
 from glob import glob
 import csv
 
-# raw_path='/Users/lillyel-said/Desktop/data'
-# output_dir='/Users/lillyel-said/Desktop/data'
-template_dir='/Users/lillyel-said/Desktop/stanford/scripts/github/vmreact/ant_vmreact_binder-master'
-# cleaned_dir='/Users/lillyel-said/Desktop/data'
+
+#defined within th emaster script
+# raw_path=''
+# output_dir=''
+# template_dir=''
+# cleaned_dir=''
+
 
 def ant_extraction_and_latencies(raw_path,output_dir,template_dir,cleaned_dir):
 

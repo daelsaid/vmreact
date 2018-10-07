@@ -8,20 +8,25 @@ current_date = datetime.datetime.today()
 date = current_date.strftime(format)
 
 
-def best_rename_with_subj(subj_dir,best_project_data):
-	if best_project_data==1:
-		files=glob(os.path.join(subj_dir,'*.csv'))
-
-		for file in range(0,len(files)):
-			fullpath=files[file]
-			fname=os.path.basename(fullpath)
-			path=os.path.dirname(fullpath)
-			old=os.path.join(path,fname)
-			prefix_id=fullpath.split('/')[-3]
-			new=os.path.join(path,'best_'+prefix_id.split('_')[1]+'_'+prefix_id.split('_')[2]+'_'+fname)
+def best_rename_with_subj(subj_dir,site_name):
+	files=glob(os.path.join(subj_dir,'*.csv'))
+	for file in range(0,len(files)):
+		fullpath=files[file]
+		fname=os.path.basename(fullpath)
+		path=os.path.dirname(fullpath)
+		old=os.path.join(path,fname)
+		prefix_id=fullpath.split('/')[-3]
+		if 'new_mex' in site_name:
+			new_mex_specific_id=os.path.join(path,'best_newmex_' + prefix_id.split('-')[0]+'_'+fname)
+			print new_mex_specific_id
 			try:
-				os.rename(old,new)
+				os.rename(old,new_mex_specific_id)
 			except OSError:
 				print 'file note found:', old
-	else:
-		continue
+		elif 'stanford' in site_name:
+			best_specific_fname=os.path.join(path,'best_'+prefix_id.split('_')[1]+'_'+prefix_id.split('_')[2]+'_'+fname)
+			try:
+				os.rename(old,best_specific_fname)
+			except OSError:
+				print 'file note found:', old
+	return files

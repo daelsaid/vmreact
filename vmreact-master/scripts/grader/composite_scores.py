@@ -10,8 +10,7 @@ Created on Tue Feb 27 12:04:33 2018
 import pandas
 import numpy as np
 
-
-def composite_scores(get_comp_scores, input_csv, output_csv):
+def composite_scores(input_csv, output_csv,get_comp_scores):
 	scored_data = pandas.read_csv(input_csv)
 
 	if get_comp_scores == 1:
@@ -20,16 +19,13 @@ def composite_scores(get_comp_scores, input_csv, output_csv):
 		tmp = pandas.DataFrame()
 
 		composite_scores[['subj_id', 'list_type']] = df_trials[['subj_id', 'list_type']]
-
-		composite_scores['total_learning'] = df_trials[['trial1', 'trial2', 'trial3', 'trial4', 'trial5']].apply(
-			lambda row: np.sum(row), axis=1)
-
+		composite_scores['total_learning'] = df_trials[['trial1', 'trial2', 'trial3', 'trial4', 'trial5']].apply(lambda row: np.sum(row), axis=1)
 		tmp['test'] = df_trials[['trial1']] * 5
-
 		composite_scores['corrected_total_learning'] = composite_scores['total_learning'].subtract(tmp['test'])
-
 		composite_scores['learning_rate'] = df_trials['trial5'].subtract(df_trials['trial1'], axis='rows')
 		composite_scores['proactive_interference'] = df_trials['trial1'].subtract(scored_data['listb'], axis='rows')
-		composite_scores['retroactive_interference'] = df_trials['trial5'].subtract(df_trials['trial6'], axis='rows')
-		composite_scores['forgetting_and_retention'] = df_trials['trial5'].subtract(df_trials['trial7'], axis='rows')
+		composite_scores['retroactive_interference']= df_trials['trial5'].subtract(df_trials['trial6'], axis='rows')
+		composite_scores['forgetting_and_retention']= df_trials['trial5'].subtract(df_trials['trial7'], axis='rows')
 		composite_scores.to_csv(output_csv, header=True, index=['measure', 'score'])
+	else:
+		print 'error occurred using input_csv'

@@ -1,4 +1,3 @@
-
 import datetime
 from glob import glob
 import pandas as pd
@@ -10,8 +9,9 @@ from inquisit_demo_summary import demo_and_summary
 from inquisit_demo_summary_newageranges import demo_and_summary_new
 from best_vmreact_subj_naming import best_rename_with_subj
 from best_vmreact_compilation_merged import restructure_and_regrade_all_data
-
-os.chdir('/Users/lillyel-said/Desktop/stanford/scripts/projects/vmreact_conda/vmreact-master/scripts/grader')
+from extract_csv_into_dict_fxn import extract_data_from_csv_into_dict
+from best_vmreact_subj_naming
+# os.chdir('/Users/lillyel-said/Desktop/stanford/scripts/projects/vmreact_conda/vmreact-master/scripts/grader')
 
 import collections
 import csv

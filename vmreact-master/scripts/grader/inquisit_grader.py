@@ -2,13 +2,11 @@ import collections
 import csv
 from difflib import SequenceMatcher
 from math import ceil
+from extract_csv_into_dict_fxn import extract_data_from_csv_into_dict
 
 
 def grader(all_subj_data_csv, data_output_raw_csv, data_output_scored_csv, word_corr, p_r):
-	with open(all_subj_data_csv, 'U') as file:
-		input_csv_lines_all_subj = csv.reader(file)
-		input_csv_lines_all_subj = map(list, zip(*input_csv_lines_all_subj))
-		all_subj_csv_lines = dict((rows[0], rows[1:]) for rows in input_csv_lines_all_subj)
+	all_subj_csv_lines=extract_data_from_csv_into_dict(all_subj_data_csv)
 
 	subj_listtype = []
 	for idx, row in enumerate(all_subj_csv_lines['subject']):
@@ -111,14 +109,14 @@ def grader(all_subj_data_csv, data_output_raw_csv, data_output_scored_csv, word_
 			print "%s has an error in their data" % subj
 			continue
 
-	full_raw_data_responses = [[all_subj_csv_lines['subject'][x], all_subj_csv_lines['trialcode'][x],
-								all_subj_csv_lines['response'][x].lower()]
-							   for x in range(len(all_subj_csv_lines['subject']))
-							   if 'recall_response' in all_subj_csv_lines['trialcode'][x]]
+	full_raw_data_responses = [[all_subj_csv_lines['subject'][x], all_subj_csv_lines['trialcode'][x],all_subj_csv_lines['response'][x].lower()] for x in range(len(all_subj_csv_lines['subject'])) if 'recall_response' in  all_subj_csv_lines['trialcode'][x]]
+
+
 	all_responses = []
 	repeats = []
 	list_b_all = []
 	list_a_all = []
+
 	with open(data_output_raw_csv, 'wb') as csvfile:
 		writer = csv.writer(csvfile, delimiter=',')
 		writer.writerow(('subj_id', 'list_type', 'trial', 'response', 'score'))
@@ -156,8 +154,7 @@ def grader(all_subj_data_csv, data_output_raw_csv, data_output_scored_csv, word_
 
 	trial_breaks = []
 	trial_lines = [all_responses[y][1] for y in range(0, len(all_responses))]
-	trial_breaks = [i for i, x in enumerate(trial_lines[0:])
-					if x.split('_')[0] != trial_lines[i - 1].split('_')[0]]
+	trial_breaks = [i for i, x in enumerate(trial_lines[0:]) if x.split('_')[0] != trial_lines[i - 1].split('_')[0]]
 
 	trial_breaks = trial_breaks + [len(all_responses)]
 
@@ -173,8 +170,7 @@ def grader(all_subj_data_csv, data_output_raw_csv, data_output_scored_csv, word_
 				word_list.append(line[2])
 		test = []
 		for idx, word in enumerate(word_list):
-			test.append([SequenceMatcher(None, word, x).ratio() for x in
-						 [y for idx2, y in enumerate(word_list) if idx != idx2]])
+			test.append([SequenceMatcher(None, word, x).ratio() for x in [y for idx2, y in enumerate(word_list) if idx != idx2]])
 		repeats = 0
 		for word in test:
 			word_thresholded = [ceil(x) for x in word if x > 0.8]

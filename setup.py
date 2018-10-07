@@ -9,7 +9,7 @@ import os
 
 cwd=os.getcwd()
 sys.path.append(os.path.join(cwd,'vmreact_conda/.conda/envs/vmreact_conda/bin'))
-
+print sys.path
 required = [
 	'certifi==2018.8.13',
 	'numpy==1.14.3',

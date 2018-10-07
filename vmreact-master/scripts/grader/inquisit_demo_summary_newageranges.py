@@ -1,16 +1,9 @@
 import csv
-
+from extract_csv_into_dict_fxn import extract_data_from_csv_into_dict
 
 def demo_and_summary_new(all_subj_data_csv, demographic_data, subj_age_agerange_gender):
-	with open(all_subj_data_csv, 'U') as file:
-		input_csv_lines_all_subj = csv.reader(file)
-		input_csv_lines_all_subj = map(list, zip(*input_csv_lines_all_subj))
-		all_subj_csv_lines = dict((rows[0], rows[1:]) for rows in input_csv_lines_all_subj)
-
-	with open(demographic_data, 'U') as file:
-		input_demo_sr_q_csv = csv.reader(file)
-		input_demo_sr_q_csv = map(list, zip(*input_demo_sr_q_csv))
-		demographic_data = dict((rows[0], rows[1:]) for rows in (input_demo_sr_q_csv))
+	all_subj_csv_lines=extract_data_from_csv_into_dict(all_subj_data_csv)
+	demographic_data=extract_data_from_csv_into_dict(demographic_data)
 
 	age_ranges = {
 		'20-29': range(20, 30, 1),
@@ -25,12 +18,10 @@ def demo_and_summary_new(all_subj_data_csv, demographic_data, subj_age_agerange_
 
 	for subject in sorted(set(all_subj_csv_lines['subject'])):
 		subj_id_only_demo.append(subject)
-		subj_id_list_combined = [demographic_data['subject'][x] for x in range(len(demographic_data['subject'])) if
-								 demographic_data['subject'][x] == subject]
+		subj_id_list_combined = [demographic_data['subject'][x] for x in range(len(demographic_data['subject'])) if demographic_data['subject'][x] == subject]
 		subj_id_list_demo.append(subj_id_list_combined)
 
 	subj_id_combined = [(idx, val) for idx, val in enumerate(sorted(subj_id_only_demo))]
-
 	subj_val = []
 	key_val_all = []
 	for key in sorted(demographic_data.keys()):
@@ -50,22 +41,13 @@ def demo_and_summary_new(all_subj_data_csv, demographic_data, subj_age_agerange_
 	subj_age_gender_mem = []
 	x = []
 	for idx2, subj_id in enumerate(subj_id_only_demo):
-		subj_age_gen = [[demographic_data['subject'][x], demographic_data['gender_response'][x].lower(),
-						 demographic_data['age_textbox_response'][x]] for x in range(len(demographic_data['subject']))
-						if demographic_data['subject'][x] == subj_id]
-		y = [[demographic_data['subject'][x]] for x in range(len(demographic_data['subject'])) if
-			 demographic_data['subject'][x] == subj_id]
+		subj_age_gen = [[demographic_data['subject'][x], demographic_data['gender_response'][x].lower(), demographic_data['age_textbox_response'][x]] for x in range(len(demographic_data['subject'])) if demographic_data['subject'][x] == subj_id]
+		y = [[demographic_data['subject'][x]] for x in range(len(demographic_data['subject'])) if demographic_data['subject'][x] == subj_id]
 		subj_age_gender_mem.append(subj_age_gen)
 
-	demo_subj_age_gender = [[demographic_data['subject'][x], demographic_data['gender_response'][x].lower(),
-							 demographic_data['age_textbox_response'][x]]
-							for x in range(len(demographic_data['subject']))
-							if demographic_data['subject'][x]]
+	demo_subj_age_gender = [[demographic_data['subject'][x], demographic_data['gender_response'][x].lower(), demographic_data['age_textbox_response'][x]] for x in range(len(demographic_data['subject'])) if demographic_data['subject'][x]]
 
-	raw_data_responses = [[all_subj_csv_lines['subject'][x], all_subj_csv_lines['trialcode'][x],
-						   all_subj_csv_lines['response'][x].lower()]
-						  for x in range(len(all_subj_csv_lines['subject']))
-						  if 'recall_response' in all_subj_csv_lines['trialcode'][x]]
+	raw_data_responses = [[all_subj_csv_lines['subject'][x], all_subj_csv_lines['trialcode'][x], all_subj_csv_lines['response'][x].lower()] for x in range(len(all_subj_csv_lines['subject'])) if 'recall_response' in all_subj_csv_lines['trialcode'][x]]
 
 	key_val = []
 	for key in age_ranges.keys():
