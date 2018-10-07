@@ -19,6 +19,7 @@ format = "%Y_%m_%d"
 current_date = datetime.datetime.today()
 date = current_date.strftime(format)
 
-output_csv = os.path.join(output_path, 'vmreact_composite_scores_vakil' + '_' + date + '.csv')
+output_csv = os.path.join(
+    output_path, 'vmreact_composite_scores_vakil' + '_' + date + '.csv')
 
 composite_scores(1, input_csv, output_csv)
