@@ -12,6 +12,8 @@ from inquisit_grader import grader
 from best_vmreact_subj_naming import best_rename_with_subj
 from best_vmreact_compilation_merged import restructure_and_regrade_all_data
 from extract_csv_into_dict_fxn import extract_data_from_csv_into_dict
+from vmreact_full_merge import date_scored, date_of_scored_files, list_all_output_csv_files, pull_all_column_headers, merge_all_csvs
+
 # def install(name):
 	# import subprocess
 	# subprocess.call(['pip', 'install', name])
@@ -135,6 +137,10 @@ gen_vmreact_latencies(csv_dir, output)
 # generate latency measures for the ANT r task
 ant_extraction_and_latencies(csv_dir, output, template_dir, output)
 
-# batch_merge(args.output_csv_location,compiled_columns(os.path.join(args.output_csv_location,csv_dir,'csv')))
+#list all scored data files
+data_files=list_all_output_csv_files(glob.os.path.join(output,'*.csv')
 
-# organize_columns_merge_csvs(args.output_csv_location,compiled_columns(os.path.join(args.output_csv_location,csv_dir,'csv')))
+date_of_scored_files=date_scored(data_files)
+
+#merge all data files including demo, latency for vmreact
+merge_all_csvs(data_files, date_of_scored_files)
