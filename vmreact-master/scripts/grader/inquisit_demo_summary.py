@@ -1,3 +1,5 @@
+#!/usr/bin/env python2
+
 import collections
 import csv
 from extract_csv_into_dict_fxn import extract_data_from_csv_into_dict

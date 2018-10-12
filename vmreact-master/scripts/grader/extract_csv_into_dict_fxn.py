@@ -1,3 +1,5 @@
+#!/usr/bin/env python2
+
 import csv
 def extract_data_from_csv_into_dict(csv_file_to_extract):
     dict_name = []

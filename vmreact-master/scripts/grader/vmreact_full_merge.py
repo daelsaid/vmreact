@@ -1,4 +1,5 @@
-import datetime
+#!/usr/bin/env python2
+
 import os
 from glob import glob
 from shutil import copy, move
@@ -12,15 +13,14 @@ def list_all_output_csv_files(scored_dir):
         f) and 'word_correlations' not in os.path.basename(f) and 'parsed' not in os.path.basename(f)]
     return list_of_data_files
 
-date_of_scored_files = []
+# data_files = list_all_output_csv_files(scored_dir)
 
+date_of_scored_files = []
 def date_scored(data_files):
     basename_file_for_date = os.path.basename(data_files[0])
     date_scored = '_'.join(
         basename_file_for_date.split('_')[-3:]).split('.')[0]
     return date_scored
-
-
 
     for col in range(0, len(data_files)):
         df = pd.read_csv(data_files[col], dtype=str)
@@ -34,8 +34,7 @@ def date_scored(data_files):
     all_cols_set = sorted(list(set(all_cols)))
     return all_cols_set
 
-data_files = list_all_output_csv_files(scored_dir)
-all_cols = pull_all_column_headers(data_files)
+# all_cols = pull_all_column_headers(data_files)
 
 def merge_all_csvs(data_files, date_of_scored_files):
 
@@ -81,10 +80,9 @@ def merge_all_csvs(data_files, date_of_scored_files):
     new_df = new_df.merge(temp_df.reset_index(), on='subj_id', copy=False).rename(
         columns={'list_type_x': 'list_type'})
 
-
     new_df_col=new_df.columns.tolist()
     nolatency=[col for col in new_df_col if 'latency' not in col]
     new_df=new_df[nolatency]
     new_df.to_csv(os.path.join(dirname, subj_id + '_inquisit_compiled.csv'))
 
-    return new_df
+    return new_dfw
