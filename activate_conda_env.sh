@@ -12,7 +12,7 @@ echo "renaming vmreact-master to vmreact"
 #install miniconda in the pre-requirements dir
 echo "Installing miniconda2 in the pre-requirements folder....";
 
-bash `echo ${project_path}`/pre-requirements/Miniconda2-latest-MacOSX-x86_64.sh -b -p `echo ${project_path}`/pre-requirements/vmreact_miniconda2;
+bash ${project_path}/pre-requirements/Miniconda2-latest-MacOSX-x86_64.sh -b -p ${project_path}/pre-requirements/vmreact_miniconda2;
 
 #add conda executables to path
 export PATH=$PATH:${project_path}/pre-requirements/vmreact_miniconda2/bin/
@@ -27,7 +27,7 @@ conda info;
 #create vmreact env
 
 echo "creating vmreact conda environment...."
-conda env create --file `echo ${project_path}`/pre-requirements/vmreact_miniconda_env.yaml -p `echo ${project_path}`/pre-requirements/vmreact_miniconda2/envs/vmreact;
+conda env create --file ${project_path}/pre-requirements/vmreact_miniconda_env.yaml -p ${project_path}/pre-requirements/vmreact_miniconda2/envs/vmreact;
 
 #conda config
 # touch ${env_path}/.condarc;
@@ -42,4 +42,4 @@ echo "running setup.py for installation....."
 python setup.py install;
 
 #activate env
-source activate `echo ${env_path}`;
+source activate ${env_path};
