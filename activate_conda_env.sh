@@ -33,7 +33,7 @@ conda env create --file ${project_path}/pre-requirements/vmreact_miniconda_env.y
 # touch ${env_path}/.condarc;
 # cat `echo {project_path}/pre-requirements/.condarc` > ${env_path}/.condarc;
 
-echo "source activate `echo ${env_path}`" >> ~/.bashrc
+echo "source activate ${env_path}" >> ~/.bashrc
 echo "source ~/.bashrc" >> ~/.bash_profile
 source ~/.bash_profile;
 
