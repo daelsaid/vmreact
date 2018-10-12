@@ -6,7 +6,7 @@ from shutil import copy, move
 import pandas as pd
 import numpy as np
 from IPython.display import display
-from extract_csv_into_dict_fxn import extract_data_from_csv_into_dict
+import vmreact-master.scripts.grader.extract_csv_into_dict_fxn
 
 def list_all_output_csv_files(scored_dir):
     list_of_data_files = [f for f in scored_dir if os.path.isfile(

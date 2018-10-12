@@ -1,8 +1,7 @@
 #!/usr/bin/env python2
 
 import csv
-from extract_csv_into_dict_fxn import extract_data_from_csv_into_dict
-
+import vmreact-master.scripts.grader.extract_csv_into_dict_fxn
 
 def demo_and_summary_new(all_subj_data_csv, demographic_data, subj_age_agerange_gender):
     all_subj_csv_lines = extract_data_from_csv_into_dict(all_subj_data_csv)
@@ -37,28 +36,18 @@ def demo_and_summary_new(all_subj_data_csv, demographic_data, subj_age_agerange_
             else:
                 continue
 
-    subj_id_with_index = list()
-    for subj_num in subj_val:
-        subj_combined = [[idx, val] for idx, val in enumerate(
-            sorted(subj_id_only_demo)) if val == subj_num]
-        subj_indexvals = [[idx, val]
-                          for idx, val in enumerate(sorted(subj_id_only_demo))]
-        subj_id_with_index.append(subj_combined)
-
     subj_age_gender_mem = []
     x = []
     for idx2, subj_id in enumerate(subj_id_only_demo):
-        subj_age_gen = [[demographic_data['subject'][x], demographic_data['gender_response'][x].lower(
-        ), demographic_data['age_textbox_response'][x]] for x in range(len(demographic_data['subject'])) if demographic_data['subject'][x] == subj_id]
+        subj_age_gen = [[demographic_data['subject'][x], demographic_data['gender_response'][x].lower(), demographic_data['age_textbox_response'][x]] for x in range(len(demographic_data['subject']))
+        if demographic_data['subject'][x] == subj_id]
         y = [[demographic_data['subject'][x]] for x in range(
             len(demographic_data['subject'])) if demographic_data['subject'][x] == subj_id]
         subj_age_gender_mem.append(subj_age_gen)
 
-    demo_subj_age_gender = [[demographic_data['subject'][x], demographic_data['gender_response'][x].lower(
-    ), demographic_data['age_textbox_response'][x]] for x in range(len(demographic_data['subject'])) if demographic_data['subject'][x]]
+    demo_subj_age_gender = [[demographic_data['subject'][x], demographic_data['gender_response'][x].lower(), demographic_data['age_textbox_response'][x]] for x in range(len(demographic_data['subject'])) if demographic_data['subject'][x]]
 
-    raw_data_responses = [[all_subj_csv_lines['subject'][x], all_subj_csv_lines['trialcode'][x], all_subj_csv_lines['response'][x].lower(
-    )] for x in range(len(all_subj_csv_lines['subject'])) if 'recall_response' in all_subj_csv_lines['trialcode'][x]]
+    raw_data_responses = [[all_subj_csv_lines['subject'][x], all_subj_csv_lines['trialcode'][x], all_subj_csv_lines['response'][x].lower()] for x in range(len(all_subj_csv_lines['subject'])) if 'recall_response' in all_subj_csv_lines['trialcode'][x]]
 
     key_val = []
     for key in age_ranges.keys():

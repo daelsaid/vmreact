@@ -2,7 +2,7 @@
 
 import collections
 import csv
-from extract_csv_into_dict_fxn import extract_data_from_csv_into_dict
+import vmreact-master.scripts.grader.extract_csv_into_dict_fxn
 
 
 def demo_and_summary(all_subj_data_csv, demographic_data, final_summary_csv, frequency_count, subj_age_agerange_gender, sr_responses, summary_ant_scores):
