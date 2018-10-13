@@ -127,7 +127,6 @@ with PdfPages('/Users/lillyel-said/Desktop/patient_specific_learning_trajectorie
         display = (0, 1, 2)
         ax2.legend([label for i, label in enumerate(labels) if i in display],
                    fontsize=10, bbox_to_anchor=(1.57, 1.00), ncol=1)
-        ax2.legend
         pdf.savefig()
 
 

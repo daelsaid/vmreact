@@ -9,7 +9,7 @@ import pandas as pd
 
 # In[41]:
 
-scored_dir = '/Users/lillyel-said/Desktop/vmreact/vmreact/2_vmreact/'
+# scored_dir = '/Users/lillyel-said/Desktop/vmreact/vmreact/2_vmreact/'
 parsed_list = []
 
 for batch in range(1, 9):
