@@ -1,3 +1,0 @@
-to install dependencies run the following command in a terminal window:
-
-1. python setup.py install
