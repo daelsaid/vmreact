@@ -4,7 +4,7 @@ import collections
 import csv
 from difflib import SequenceMatcher
 from math import ceil
-import vmreact-master.scripts.grader.extract_csv_into_dict_fxn
+from extract_csv_into_dict_fxn import extract_data_from_csv_into_dict
 
 def grader(all_subj_data_csv, data_output_raw_csv, data_output_scored_csv, word_corr, p_r):
     all_subj_csv_lines = extract_data_from_csv_into_dict(all_subj_data_csv)

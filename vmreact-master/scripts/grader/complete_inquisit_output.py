@@ -105,6 +105,16 @@ vmreact_primacy_word_correlations = os.path.join(
 vmreact_composite_scores_outfile = os.path.join(
     args.output_csv_location, 'vmreact_composite_scores_vakil' + '_' + date + '.csv')
 
+#vmreact compiled
+vmreact_compiled_primary=os.path.join(args.output_csv_location,'vmreact_compiled_primary'+'_' + date + '.csv')
+
+
+vmreact_typing_test_avg_latency=os.path.join(args.output_csv_location,'vmreact_typing_test_average_latency'
+
+
+vmreact_complete_compilation=os.path.join(args.output_csv_location,'vmreact_complete_compilation'
+incorrect_response
+
 # parse demo data and create human readable file
 demo_and_summary(all_subj_data_csv, demographic_data, final_summary_csv, vmreact_basic_demo_frequency_counts,
                  vmreact_demo_agegender_age_range_from_norms, vmreact_self_report_scores, vmreact_antr_accuracy_scores)
@@ -146,3 +156,5 @@ date_of_scored_files=date_scored(data_files)
 
 #merge all data files including demo, latency for vmreact
 merge_all_csvs(data_files, date_of_scored_files)
+
+typing_test_extraction(output,0)

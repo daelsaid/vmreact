@@ -6,7 +6,7 @@ from shutil import copy, move
 import pandas as pd
 import numpy as np
 from IPython.display import display
-import vmreact-master.scripts.grader.extract_csv_into_dict_fxn
+from extract_csv_into_dict_fxn import extract_data_from_csv_into_dict
 
 def list_all_output_csv_files(scored_dir):
     list_of_data_files = [f for f in scored_dir if os.path.isfile(
@@ -85,4 +85,4 @@ def merge_all_csvs(data_files, date_of_scored_files):
     new_df=new_df[nolatency]
     new_df.to_csv(os.path.join(dirname, subj_id + '_inquisit_compiled.csv'))
 
-    return new_dfw
+    return new_df

@@ -1,12 +1,12 @@
 import os
 import pandas as pd
 
+#
+# datadir = './vmreact/vmreact/2_vmreact/'
+# compiled_csv = './vmreact/vmreact/2_vmreact/mturk_vmreact_complete_compilation_initiation.csv'
+# average_typing_csv= '/Users/lillyel-said/Desktop/vmreact/vmreact/2_vmreact/typing_test_averages.csv'
 
-def extra_compiled_measures(datadir, compiled_csv, typing_test_csv, average_typing_csv, updated_compilation_csv):
-    # data_dir = '/Users/lillyel-said/Desktop/vmreact/vmreact/2_vmreact/'
-    # compiled_csv = '/Users/lillyel-said/Desktop/vmreact/vmreact/2_vmreact/mturk_vmreact_complete_compilation_initiation.csv'
-    # average_typing_csv= '/Users/lillyel-said/Desktop/vmreact/vmreact/2_vmreact/typing_test_averages.csv'
-
+def extra_compiled_measures(datadir, compiled_csv,  average_typing_csv, updated_compilation_csv):
     trials = ['trial1', 'trial2', 'trial3', 'trial4',
               'trial5', 'listb', 'trial6', 'trial7']
 
@@ -18,7 +18,7 @@ def extra_compiled_measures(datadir, compiled_csv, typing_test_csv, average_typi
     incorrect_df = pd.read_csv(os.path.join(
         data_dir, 'incorrect_response.csv'), dtype=str)
 
-    vmreact_df = pd.read_csv(compiled, dtype='str')
+    vmreact_df = pd.read_csv(compiled_csv, dtype='str')
 
     avg_typing_df = pd.read_csv(average_typing_csv, dtype='str')
 

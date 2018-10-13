@@ -1,15 +1,14 @@
 try:
-    from setuptools import setup
+    from setuptools import setu
 except ImportError:
     from distutils.core import setup
 
 import sys
 import os
 
-
 cwd = os.getcwd()
 sys.path.append(os.path.join(
-    cwd, 'vmreact_conda/.conda/envs/vmreact_conda/bin'))
+    cwd, 'vmreact/pre-requirements/vmreact_miniconda2/envs/vmreact_conda/bin'))
 print sys.path
 required = [
     'certifi==2018.8.13',
@@ -29,8 +28,8 @@ setup(
     name='vmreact',
     version='0.1',
     packages=[
-        'vmreact-master.scripts', 'vmreact-master.scripts.grader', 'vmreact-data-visualization', 'vmreact-merges',
-        'vmreact-mturk.post_scoring_compiled_csv',
+        'vmreact-master.scripts', 'vmreact-master.scripts.grader', 'vmreact-data-visualization',
+        'vmreact-mturk.mturk_api_launch_scripts','vmreact-mturk.stats','vmreact-mturk.post_scoring_compiled_csv'
     ],
     install_requires=required,
     platforms='Mac OSx',

@@ -1,7 +1,7 @@
 #!/usr/bin/env python2
 
 import csv
-import vmreact-master.scripts.grader.extract_csv_into_dict_fxn
+from extract_csv_into_dict_fxn import extract_data_from_csv_into_dict
 
 def demo_and_summary_new(all_subj_data_csv, demographic_data, subj_age_agerange_gender):
     all_subj_csv_lines = extract_data_from_csv_into_dict(all_subj_data_csv)
