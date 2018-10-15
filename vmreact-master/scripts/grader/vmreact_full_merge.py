@@ -80,9 +80,8 @@ def merge_all_csvs(data_files, date_of_scored_files):
     new_df = new_df.merge(temp_df.reset_index(), on='subj_id', copy=False).rename(
         columns={'list_type_x': 'list_type'})
 
-    new_df_col=new_df.columns.tolist()
-    nolatency=[col for col in new_df_col if 'latency' not in col]
-    new_df=new_df[nolatency]
+    new_df_col = new_df.columns.tolist()
+    nolatency = [col for col in new_df_col if 'latency' not in col]
+    new_df = new_df[nolatency]
     new_df.to_csv(os.path.join(dirname, subj_id + '_inquisit_compiled.csv'))
-
     return new_df

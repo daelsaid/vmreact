@@ -17,8 +17,8 @@ from extract_csv_into_dict_fxn import extract_data_from_csv_into_dict
 from vmreact_full_merge import date_scored, date_of_scored_files, list_all_output_csv_files, pull_all_column_headers, merge_all_csvs
 
 # def install(name):
-	# import subprocess
-	# subprocess.call(['pip', 'install', name])
+# import subprocess
+# subprocess.call(['pip', 'install', name])
 # install('pandas')
 
 template_dir = '../../vmreact/ant_vmreact_binder-master'
@@ -105,15 +105,15 @@ vmreact_primacy_word_correlations = os.path.join(
 vmreact_composite_scores_outfile = os.path.join(
     args.output_csv_location, 'vmreact_composite_scores_vakil' + '_' + date + '.csv')
 
-#vmreact compiled
-vmreact_compiled_primary=os.path.join(args.output_csv_location,'vmreact_compiled_primary'+'_' + date + '.csv')
+# vmreact compiled
+vmreact_compiled_primary = os.path.join(
+    args.output_csv_location, 'vmreact_compiled_primary' + '_' + date + '.csv')
 
+vmreact_typing_test_avg_latency = os.path.join(
+    args.output_csv_location, 'vmreact_typing_test_average_latency' + '_' + date + '.csv')
 
-vmreact_typing_test_avg_latency=os.path.join(args.output_csv_location,'vmreact_typing_test_average_latency'
-
-
-vmreact_complete_compilation=os.path.join(args.output_csv_location,'vmreact_complete_compilation'
-incorrect_response
+vmreact_complete_compilation = os.path.join(
+    args.output_csv_location, 'vmreact_complete_compilation' + '_' + date + '.csv')
 
 # parse demo data and create human readable file
 demo_and_summary(all_subj_data_csv, demographic_data, final_summary_csv, vmreact_basic_demo_frequency_counts,
@@ -149,12 +149,12 @@ gen_vmreact_latencies(csv_dir, output)
 # generate latency measures for the ANT r task
 ant_extraction_and_latencies(csv_dir, output, template_dir, output)
 
-#list all scored data files
-data_files=list_all_output_csv_files(glob.os.path.join(output,'*.csv')
+# list all scored data files
+data_files = list_all_output_csv_files(glob(os.path.join(output, '*.csv')))
 
-date_of_scored_files=date_scored(data_files)
+date_of_scored_files = date_scored(data_files)
 
-#merge all data files including demo, latency for vmreact
+# merge all data files including demo, latency for vmreact
 merge_all_csvs(data_files, date_of_scored_files)
 
-typing_test_extraction(output,0)
+typing_test_extraction(output, 0)
