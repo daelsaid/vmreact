@@ -5,9 +5,8 @@ project_path=${HOME}/Desktop/vmreact
 env_path="${project_path}/pre-requirements/vmreact_miniconda2/envs/vmreact"
 
 #rename vmreact-master to vmreact
-
 echo "renaming vmreact-master to vmreact"
-#mv "/Users/`echo $USER`/Desktop/vmreact-master" "/Users/`echo $USER`/Desktop/vmreact";
+mv "${HOME}/Desktop/vmreact-master" "${HOME}/Desktop/vmreact";
 
 #install miniconda in the pre-requirements dir
 echo "Installing miniconda2 in the pre-requirements folder....";
