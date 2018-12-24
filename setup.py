@@ -29,7 +29,7 @@ setup(
     version='0.1',
     packages=[
         'vmreact-master.scripts', 'vmreact-master.scripts.grader', 'vmreact-data-visualization',
-        'vmreact-mturk.mturk_api_launch_scripts','vmreact-mturk.stats','vmreact-mturk.post_scoring_compiled_csv'
+        'vmreact-mturk.mturk_api_launch_scripts', 'vmreact-mturk.stats', 'vmreact-mturk.post_scoring_compiled_csv'
     ],
     install_requires=required,
     platforms='Mac OSx',
